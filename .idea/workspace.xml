@@ -24,8 +24,8 @@
       <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="266" column="22" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+            <state relative-caret-position="653">
+              <caret line="315" column="24" selection-start-line="315" selection-start-column="24" selection-end-line="315" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -60,9 +60,6 @@
         <option value="CSS File" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -113,7 +110,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,16 +144,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test-website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mbriedl_layout" />
     <property name="SearchEverywhereHistoryKey" value="todo&#9;ACTION&#9;ActivateTODOToolWindow" />
   </component>
   <component name="RecentsManager">
@@ -241,12 +238,11 @@
       <workItem from="1485735055860" duration="863000" />
       <workItem from="1486337902722" duration="3606000" />
       <workItem from="1486341744468" duration="932000" />
-      <workItem from="1486744045837" duration="253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72113000" />
+    <option name="totallyTimeSpent" value="71860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,30 +312,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/styles/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/shared.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3190">
-          <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3014">
-          <caret line="137" column="18" selection-start-line="137" selection-start-column="18" selection-end-line="137" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -670,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="266" column="22" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
+        <state relative-caret-position="653">
+          <caret line="315" column="24" selection-start-line="315" selection-start-column="24" selection-end-line="315" selection-end-column="24" />
           <folding />
         </state>
       </provider>
