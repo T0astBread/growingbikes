@@ -1,0 +1,285 @@
+body
+{
+    /*padding-top: -2em;*/
+    font-family: Roboto, sans-serif;
+}
+
+body, body section, h1
+{
+    margin: 0em;
+    padding: 0em;
+}
+
+/*Header*/
+
+header, .header-shadow
+{
+    position: fixed;
+    top: 0%;
+    z-index: 9;
+    height: 3.75em;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin: 0em;
+    display: flex;
+    background-color: #FF593A;
+    font-family: 'PT Sans', sans-serif;
+    border-bottom: .5em solid #b23e29;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+}
+
+header img
+{
+    max-height: 75%;
+    display: inline-block;
+    margin: 0em;
+    margin-top: .45em;
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 0em;
+}
+
+header h1
+{
+    display: inline-block;
+    font-size: 2em;
+    margin: 0em;
+    padding: 0em;
+    padding-top: .45em;
+    vertical-align: top;
+    /*height: 1em;*/
+    line-height: 1em;
+    color: white;
+}
+
+header #flex-placeholder
+{
+    flex: 1;
+}
+
+header #searchbar
+{
+    width: 15%;
+    height: 67.5%;
+    margin-top: .65em;
+    margin-right: 1em;
+    text-align: right;
+    background-color: #b23e29;
+    border-radius: .25em;
+    box-shadow: 1px 4px 12px rgba(0, 0, 0, .2);
+}
+
+/*TODO: Searchbar hover ersetzen durch has focus/child has focus (javascript)*/
+header #searchbar:hover
+{
+    animation: searchbar-elevation;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes searchbar-elevation
+{
+    from
+    {
+        margin-top: .65em;
+        box-shadow: 1px 4px 12px rgba(0, 0, 0, .2);
+    }
+    to
+    {
+        margin-top: .75em;
+        box-shadow: 1px 3px 10px rgba(0, 0, 0, .13);
+    }
+}
+
+header input
+{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    margin: 0em;
+    padding: 0em;
+}
+
+header input:first-of-type
+{
+    width: calc(100% - 2.5em);
+    float: left;
+    padding-left: .5em;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.3em;
+}
+
+header input:last-of-type
+{
+    float: right;
+}
+
+.header-shadow
+{
+    z-index: 7;
+    background: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Main*/
+
+main
+{
+    font-size: 1.7em;
+    padding-top: 6em;
+    margin-left: 0em;
+    margin-right: 0em;
+    text-align: justify;
+}
+
+main > section
+{
+    margin-left: 9.5em;
+    margin-right: 8em;
+    margin-bottom: 5%;
+}
+
+main > section > h1
+{
+    font-family: "Source Sans Pro";
+}
+
+main a
+{
+    color: #4b8bcf;
+}
+
+main a:active
+{
+    color: #7eb9ff;
+}
+
+/*main a:visited*/
+/*{*/
+/*color: #ff7a63;*/
+/*}*/
+
+/*Nav*/
+
+aside
+{
+    position: fixed;
+    height: 100%;
+    z-index: 8;
+    width: 4em;
+    padding: 0em;
+    margin-top: 5em;
+    background-color: rgba(220, 220, 220, .8);
+}
+
+aside:hover
+{
+    animation: opacity;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacity
+{
+    from
+    {
+        background-color: rgba(220, 220, 220, .8);
+    }
+    to
+    {
+        background-color: rgba(220, 220, 220, 1);
+    }
+}
+
+aside nav
+{
+    /*width: .7em;*/
+    width: 100%;
+    margin: 0em;
+}
+
+aside nav ul
+{
+    list-style: none;
+    margin: 0em;
+    padding: 0em;
+    margin-top: 1.5em;
+}
+
+aside nav ul li
+{
+    padding: .25em;
+    padding-top: .45em;
+    padding-bottom: .45em;
+    margin: 0em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+aside nav ul li:hover
+{
+    /*background-color: #959595;*/
+    background-color: #ff8e7c;
+}
+
+aside nav ul li img
+{
+    display: inline;
+    max-width: 65%;
+    margin: 0em;
+}
+
+aside nav ul a li > span
+{
+    /*opacity: 0;*/
+}
+
+/*Footer*/
+
+footer
+{
+    margin-left: 4em;
+    padding-left: 3.05em;
+    padding-right: 2.3em;
+    font-size: 1em;
+    background-color: #9F9F9F;
+}
+
+footer ul, footer span
+{
+    padding: 0em;
+    padding-bottom: 1.75em;
+    padding-top: 1em;
+    margin: 0em;
+    display: inline-block;
+}
+
+footer ul li
+{
+    display: inline;
+    margin-right: 3em;
+}
+
+footer span
+{
+    float: right;
+}
+
+/*Responsive design*/
+
+@media screen and (max-width: 1280px)
+{
+    header #searchbar
+    {
+        width: 25%;
+    }
+}

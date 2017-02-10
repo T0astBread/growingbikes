@@ -1,0 +1,327 @@
+#whatis
+{
+    text-align: center;
+}
+
+#whatis>*:not(h1)
+{
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+}
+
+/*Nur falls noch ein <p> element nach dem <img> kommen sollte*/
+/*#whatis>p:last-of-type*/
+/*{*/
+    /*width: 32%;*/
+    /*margin-right: 0em;*/
+    /*padding-right: 0em;*/
+/*}*/
+
+#whatis h1
+{
+    font-family: Roboto, sans-serif;
+    margin-bottom: 1em;
+}
+
+#whatis p
+{
+    text-align: justify;
+    margin-right: 0em;
+}
+
+#whatis img
+{
+    vertical-align: top;
+    margin-top: 1em;
+}
+
+#products
+{
+    /*margin: 0em;*/
+    margin-left: 0em;
+    margin-right: 0em;
+    /*margin-top: 2em;*/
+    /*margin-bottom: 2em;*/
+    padding-left: 5.25em;
+    padding-right: 3em;
+    background-color: #4b8bcf;
+}
+
+#products>h1
+{
+    padding-top: .5em;
+    padding-bottom: .2em;
+    text-align: center;
+
+    color: #c8c8c8;
+    font-family: "Source Sans Pro";
+    text-shadow: 0px 0px 7px rgba(0, 0, 0, .4);
+}
+
+ul#products-ribbon
+{
+    height: 10em;
+    padding-bottom: .35em;
+    margin: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    text-align: center;
+    overflow: auto;
+    overflow-y: hidden;
+    -ms-overflow-y: hidden;
+    white-space: nowrap;
+}
+
+/*TODO: Complete fade out of products*/
+/*#products-ribbon-fade*/
+/*{*/
+    /*z-index: 2;*/
+    /*background-color: red;*/
+
+    /*-webkit-box-shadow: inset 62px 1px 58px -41px rgba(75,139,207,1);*/
+    /*-moz-box-shadow: inset 62px 1px 58px -41px rgba(75,139,207,1);*/
+    /*box-shadow: inset 62px 1px 58px -41px rgba(75,139,207,1);*/
+/*}*/
+
+ul#products-ribbon li
+{
+    display: inline-block;
+    height: 9em;
+    width: 10em;
+    margin: 0em;
+    margin-top: .5em;
+    margin-right: 1em;
+    white-space: normal;
+
+    background-color: white;
+    box-shadow: 0px 0px 19px rgba(0, 0, 0, .4);
+}
+
+ul#products-ribbon li:hover
+{
+    background-color: #e6e6e6;
+}
+
+ul#products-ribbon li a
+{
+    padding: 0em;
+    margin: 0em;
+    color: black;
+}
+
+ul#products-ribbon li a:active
+{
+    color: black;
+}
+
+ul#products-ribbon li a>div
+{
+    height: 6em;
+    padding: 0em;
+    margin: 0em;
+    background-color: white;
+}
+
+ul#products-ribbon li img
+{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+ul#products-ribbon li h1
+{
+    display: block;
+    height: 2.5em;
+    margin: 0em;
+    margin-top: .4em;
+    margin-left: .3em;
+    font-weight: normal;
+    font-size: .62em;
+    text-align: left;
+}
+
+ul#products-ribbon li h2
+{
+    display: block;
+    height: 1em;
+    margin: 0em;
+    margin-top: .7em;
+    margin-right: .6em;
+
+    font-size: .5em;
+    font-weight: normal;
+    text-align: right;
+
+    color: #ff593a;
+}
+
+#news
+{
+    margin-bottom: 2em;
+}
+
+#news>div
+{
+    /*background-color: #c8c8c8;*/
+    /*padding: 1em;*/
+    height: 9.5em;
+    overflow-y: hidden;
+
+    /*Material floating box*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+
+    /*oder Twitter-style box*/
+    /*border: 2px solid gray;*/
+    /*border-radius: .2em;*/
+}
+
+#news>div:hover
+{
+    background-color: #e9e9e9;
+}
+
+#news div>div:not(#news-image)
+{
+    display: inline-block;
+    width: 68%;
+    margin: 1em;
+    margin-right: .5em;
+    margin-bottom: 0em;
+}
+
+#news h1
+{
+    margin-bottom: .25em;
+}
+
+#news h2
+{
+    margin: 0em;
+    margin-bottom: .5em;
+    padding: 0em;
+
+    font-size: 1.15em;
+}
+
+#news p>a:last-of-type
+{
+    display: block;
+    margin-top: 1em;
+    font-size: .8em;
+}
+
+#news div#news-image
+{
+    display: inline-block;
+    vertical-align: top;
+    /*text-align: right;*/
+    width: 26%;
+    height: 100%;
+    margin: 0em;
+    padding: 0em;
+    float: right;
+
+    background-image: url("../images/home/news/eurobike.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    /*Material*/
+    box-shadow: inset 7px 0px 15px -7px rgba(0, 0, 0, .8);
+
+    /*Twitter-embedded-style*/
+    /*border-left: 2px solid gray;*/
+}
+
+/*Irrelevant; ersetzt durch background in <div> (siehe oben)*/
+/*#news img*/
+/*{*/
+    /*display: inline-block;*/
+    /*max-width: 100%;*/
+    /*max-height: 100%;*/
+/*}*/
+
+
+/*Responsive design*/
+
+@media screen and (max-width: 1350px)
+{
+    #products
+    {
+        padding-left: 4.25em;
+        padding-right: 2em;
+    }
+
+    #news>div
+    {
+        overflow-y: auto;
+    }
+
+    #news div#news-image
+    {
+        display: none;
+        background: none;
+        width: 0%;
+    }
+
+    #news div>div:not(#news-image)
+    {
+        width: auto;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1280px)
+{
+    #whatis
+    {
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+
+    #whatis img
+    {
+        /*display: none;*/
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 55%;
+    }
+
+    #whatis p
+    {
+        width: 60%;
+        text-align: center;
+    }
+
+    #news
+    {
+        margin-left: 7.25em;
+        margin-right: 5em;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    #products
+    {
+        /*padding-left: 3.25em;*/
+        /*padding-right: 1em;*/
+
+        padding-left: 2.5em;
+        padding-right: 0em;
+    }
+}
+
+@media screen and (max-width: 920px)
+{
+    #news
+    {
+        margin-left: 5.25em;
+        margin-right: 3em;
+    }
+}
