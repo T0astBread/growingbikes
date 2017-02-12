@@ -193,10 +193,12 @@ aside:hover
     from
     {
         background-color: rgba(220, 220, 220, .8);
+        width: 4em;
     }
     to
     {
         background-color: rgba(220, 220, 220, 1);
+        width: 5.5em;
     }
 }
 
@@ -223,12 +225,19 @@ aside nav ul li
     margin: 0em;
     margin-bottom: 1em;
     text-align: center;
+    font-size: 0%;
 }
 
 aside nav ul li:hover
 {
     /*background-color: #959595;*/
     background-color: #ff8e7c;
+    font-size: inherit;
+}
+
+aside nav ul li > span:hover
+{
+
 }
 
 aside nav ul li img
@@ -240,8 +249,13 @@ aside nav ul li img
 
 aside nav ul a li > span
 {
+    /*display:none;*/
     /*opacity: 0;*/
 }
+
+
+
+
 
 /*Footer*/
 
