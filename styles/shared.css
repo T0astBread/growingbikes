@@ -70,7 +70,7 @@ header #searchbar
     box-shadow: 1px 4px 12px rgba(0, 0, 0, .2);
 }
 
-/*TODO: Searchbar hover ersetzen durch has focus/child has focus (javascript)*/
+/*TODO: Replace searchbar hover with has focus/child has focus (javascript)*/
 header #searchbar:hover
 {
     animation: searchbar-elevation;

@@ -73,7 +73,7 @@ ul#products-ribbon
     white-space: nowrap;
 }
 
-/*TODO: Complete fade out of products*/
+/*TODO: Complete fade out of products when at edge of ul*/
 /*#products-ribbon-fade*/
 /*{*/
     /*z-index: 2;*/
@@ -250,8 +250,9 @@ ul#products-ribbon li h2
 /*Responsive design*/
 @media screen and (max-width: 1620px)
 {
-    #news>div{
-        height:10em;
+    #news>div
+    {
+        height: 11em;
     }
 }
 
@@ -329,5 +330,29 @@ ul#products-ribbon li h2
     {
         margin-left: 5.25em;
         margin-right: 3em;
+    }
+}
+
+/*Phone screen size (High end windows phone)*/
+/*TODO: Make the nav dissappear and appear somewhere else instead (in shared.css)*/
+@media screen and (max-width: 768px)
+{
+    #news
+    {
+        margin-left: 3.25em;
+        margin-right: 1em;
+    }
+
+    #news>div
+    {
+        height: auto;
+    }
+
+    /*TODO: Find a nicer color for the border and hover background*/
+    #news>div:first-of-type
+    {
+        border: 2px solid darkgray;
+        border-radius: .2em;
+        box-shadow: none;
     }
 }
