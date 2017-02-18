@@ -205,7 +205,7 @@ aside.mouseout
     {
         background-color: rgba(220, 220, 220, 1);
         /*width: 5.5em;*/
-        width: 15em;
+        width: 20em;
     }
 }
 
@@ -238,46 +238,120 @@ aside nav ul li
     padding-bottom: .45em;
     margin: 0em;
     /*margin-bottom: 1em;       Replaced by padding in a to enable a consistent selected nav item*/
-    text-align: center;
+    text-align: left;
+    max-height: 2.8em;
+    white-space: nowrap;
 }
 
-aside nav ul a:hover li
+aside ul li.mouseover, aside ul li.mouseout
 {
-    /*background-color: #959595;*/
-    background-color: #ff8e7c;
+    animation-name: li-hover;
+    animation-timing-function: linear;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
 
-    /*animation: li-hover;*/
-    /*animation-duration: .2s;*/
-    /*animation-fill-mode: forwards;*/
+aside ul li.mouseout
+{
+    animation-direction: reverse;
 }
 
 @keyframes li-hover
 {
     from
     {
-        width: inherit;
+        max-height: 2.8em;
     }
     to
     {
-        width: 5em;
+        max-height: 3.9em;
     }
 }
 
-aside nav ul li:not(:hover)
+aside nav ul a:hover li
 {
-    max-width: 4em;
-}
-
-aside nav ul li img
-{
-    display: inline;
-    max-width: 65%;
-    margin: 0em;
+    /*background-color: #959595;*/
+    background-color: #ff8e7c;
 }
 
 aside nav ul a li > div
 {
     display: none;
+    margin-left: .4em;
+}
+
+aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout
+{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.8em;
+    margin-top: .35em;
+
+    animation-name: li-text-hover;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+aside nav ul a li > div.mouseout
+{
+    /*display: none;*/
+    animation-direction: reverse;
+    animation-duration: .2s;
+}
+
+@keyframes li-text-hover
+{
+    from
+    {
+        opacity: 0;
+        /*display: none;*/
+    }
+    to
+    {
+        opacity: 1;
+        /*display: inline-block;*/
+    }
+}
+
+aside ul li:not(.mouseover)
+{
+    max-width: 4em;
+    text-align: center;
+}
+
+aside img
+{
+    display: inline;
+    max-width: 65%;
+    max-height: 3em;
+    margin: 0;
+}
+
+aside img.mouseover, aside img.mouseout
+{
+    animation-name: li-img-hover;
+    animation-timing-function: linear;
+    animation-duration: .125s;
+    animation-fill-mode: forwards;
+}
+
+aside img.mouseout
+{
+    animation-direction: reverse;
+}
+
+@keyframes li-img-hover
+{
+    from
+    {
+        max-height: 2.8em;
+        margin-left: 0em;
+    }
+    to
+    {
+        max-height: 3em;
+        margin-left: .7em;
+    }
 }
 
 /*Footer*/
