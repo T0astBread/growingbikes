@@ -181,22 +181,31 @@ aside
     background-color: rgba(220, 220, 220, .8);
 }
 
-aside:hover
+aside.mouseover, aside.mouseout/*, aside:hover*/
 {
-    animation: opacity;
+    animation-name: aside-hover;
     animation-duration: .2s;
     animation-fill-mode: forwards;
 }
 
-@keyframes opacity
+aside.mouseout
+{
+    animation-direction: reverse;
+    /*animation-fill-mode: backwards;*/
+}
+
+@keyframes aside-hover
 {
     from
     {
         background-color: rgba(220, 220, 220, .8);
+        width: 4em;
     }
     to
     {
         background-color: rgba(220, 220, 220, 1);
+        /*width: 5.5em;*/
+        width: 15em;
     }
 }
 
@@ -229,6 +238,27 @@ aside nav ul li:hover
 {
     /*background-color: #959595;*/
     background-color: #ff8e7c;
+
+    /*animation: li-hover;*/
+    /*animation-duration: .2s;*/
+    /*animation-fill-mode: forwards;*/
+}
+
+@keyframes li-hover
+{
+    from
+    {
+        width: inherit;
+    }
+    to
+    {
+        width: 5em;
+    }
+}
+
+aside nav ul li:not(:hover)
+{
+    max-width: 4em;
 }
 
 aside nav ul li img
@@ -238,9 +268,9 @@ aside nav ul li img
     margin: 0em;
 }
 
-aside nav ul a li > span
+aside nav ul a li > div
 {
-    /*opacity: 0;*/
+    display: none;
 }
 
 /*Footer*/
