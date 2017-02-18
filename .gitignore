@@ -66,3 +66,8 @@ Temporary Items
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/workspace.xml
+.idea/copyright/profiles_settings.xml
+.idea/growingbikes.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
