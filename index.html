@@ -55,7 +55,8 @@
         </ul>
     </nav>
 </aside>
-<div class="header-shadow"></div>
+<div id="header-shadow"></div>
+<div id="darken-body"></div>
 <section>
     <!--Content-->
     <main>
@@ -165,24 +166,37 @@
 </section>
 <script type="text/javascript" language="JavaScript">
     var toBeHovered = document.getElementById("nav-parent");
+    var darkened = false, navBarExtended = false;
 
     toBeHovered.onmouseenter = function () {
-        resetAnimations(true);
+        if(!darkened) setNavBarExtendedState(true);
     }
 
     toBeHovered.onmouseleave = function () {
-        resetAnimations(false);
+        if(navBarExtended) setNavBarExtendedState(false);
     }
 
-    function resetAnimations(mouseover)
+    function setNavBarExtendedState(extended)
     {
-        setMouseOver(mouseover, document.getElementById("nav-parent"));
+        navBarExtended = extended;
+
+        setMouseOver(extended, document.getElementById("nav-parent"));
         var children = document.getElementById("nav-list").getElementsByTagName("*");
         for(var i = 0; i < children.length; i++)
         {
-            setMouseOver(mouseover, children[i]);
+            setMouseOver(extended, children[i]);
             if(i > 100) debugger;
         }
+        setDarkenContent(extended);
+    }
+
+    function setDarkenContent(darken, zIndex)
+    {
+        darkened = darken;
+
+        var darkener = document.getElementById("darken-body");
+        setMouseOver(darken, darkener);
+        darkener.style.zIndex = zIndex > 0 ? zIndex : 7;
     }
 
     /**
@@ -196,14 +210,12 @@
         void htmlElement.offsetWidth; //No idea what this line does, I copied it off the internet
         htmlElement.classList.add(mouseover ? "mouseover" : "mouseout");
 
-        if(htmlElement.tagName === "DIV")
+        if(htmlElement.tagName === "DIV" && htmlElement.id == "")
         {
-            var css = htmlElement.style;
             setTimeout(function()
             {
-                css.display = mouseover ? "inline-block" : "none";
-//            }, parseInt(css.animationDuration.replace("s", "")));
-            }, 200);
+                htmlElement.style.display = mouseover ? "inline-block" : "none";
+            }, 125);
         }
     }
 </script>

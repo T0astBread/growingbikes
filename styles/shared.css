@@ -12,7 +12,7 @@ body, body section, h1
 
 /*Header*/
 
-header, .header-shadow
+header, #header-shadow
 {
     position: fixed;
     top: 0%;
@@ -117,7 +117,7 @@ header input:last-of-type
     float: right;
 }
 
-.header-shadow
+#header-shadow
 {
     z-index: 7;
     background: none;
@@ -168,6 +168,44 @@ main a:active
 /*color: #ff7a63;*/
 /*}*/
 
+#darken-body
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0;
+}
+
+#darken-body.mouseover, #darken-body.mouseout
+{
+    animation: darken;
+    animation-timing-function: ease;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+#darken-body.mouseout
+{
+    animation-direction: reverse;
+}
+
+@keyframes darken
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: .6;
+    }
+}
+
 /*Nav*/
 
 aside
@@ -179,6 +217,8 @@ aside
     padding: 0em;
     margin-top: 5em;
     background-color: rgba(220, 220, 220, .8);
+    /*background-color: rgba(220, 220, 220, 1);*/
+    box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
 }
 
 aside.mouseover, aside.mouseout/*, aside:hover*/
@@ -199,11 +239,13 @@ aside.mouseout
     from
     {
         background-color: rgba(220, 220, 220, .8);
+        box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
         width: 4em;
     }
     to
     {
         background-color: rgba(220, 220, 220, 1);
+        box-shadow: 4px 0px 9px rgba(0, 0, 0, 0.55);
         /*width: 5.5em;*/
         width: 20em;
     }
@@ -323,7 +365,7 @@ aside img
 {
     display: inline;
     max-width: 65%;
-    max-height: 3em;
+    max-height: 2.4em;
     margin: 0;
 }
 
@@ -338,19 +380,20 @@ aside img.mouseover, aside img.mouseout
 aside img.mouseout
 {
     animation-direction: reverse;
+    animation-fill-mode: none;
 }
 
 @keyframes li-img-hover
 {
     from
     {
-        max-height: 2.8em;
-        margin-left: 0em;
+        max-height: 2.4em;
+        margin-left: .75em;
     }
     to
     {
         max-height: 3em;
-        margin-left: .7em;
+        margin-left: .8em;
     }
 }
 
@@ -358,11 +401,12 @@ aside img.mouseout
 
 footer
 {
-    margin-left: 4em;
-    padding-left: 3.05em;
+    padding-left: 7.05em;
     padding-right: 2.3em;
     font-size: 1em;
     background-color: #9F9F9F;
+    position: relative;
+    z-index: 6;
 }
 
 footer ul, footer span
