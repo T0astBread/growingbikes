@@ -12,7 +12,7 @@ body, body section, h1
 
 /*Header*/
 
-header, .header-shadow
+header, #header-shadow
 {
     position: fixed;
     top: 0%;
@@ -117,7 +117,7 @@ header input:last-of-type
     float: right;
 }
 
-.header-shadow
+#header-shadow
 {
     z-index: 7;
     background: none;
@@ -168,6 +168,44 @@ main a:active
 /*color: #ff7a63;*/
 /*}*/
 
+#darken-body
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0;
+}
+
+#darken-body.mouseover, #darken-body.mouseout
+{
+    animation: darken;
+    animation-timing-function: ease;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+#darken-body.mouseout
+{
+    animation-direction: reverse;
+}
+
+@keyframes darken
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: .6;
+    }
+}
+
 /*Nav*/
 
 aside
@@ -179,24 +217,37 @@ aside
     padding: 0em;
     margin-top: 5em;
     background-color: rgba(220, 220, 220, .8);
+    /*background-color: rgba(220, 220, 220, 1);*/
+    box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
 }
 
-aside:hover
+aside.mouseover, aside.mouseout/*, aside:hover*/
 {
-    animation: opacity;
+    animation-name: aside-hover;
     animation-duration: .2s;
     animation-fill-mode: forwards;
 }
 
-@keyframes opacity
+aside.mouseout
+{
+    animation-direction: reverse;
+    /*animation-fill-mode: backwards;*/
+}
+
+@keyframes aside-hover
 {
     from
     {
         background-color: rgba(220, 220, 220, .8);
+        box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
+        width: 4em;
     }
     to
     {
         background-color: rgba(220, 220, 220, 1);
+        box-shadow: 4px 0px 9px rgba(0, 0, 0, 0.55);
+        /*width: 5.5em;*/
+        width: 20em;
     }
 }
 
@@ -229,7 +280,34 @@ aside nav ul li
     padding-bottom: .45em;
     margin: 0em;
     /*margin-bottom: 1em;       Replaced by padding in a to enable a consistent selected nav item*/
-    text-align: center;
+    text-align: left;
+    max-height: 2.8em;
+    white-space: nowrap;
+}
+
+aside ul li.mouseover, aside ul li.mouseout
+{
+    animation-name: li-hover;
+    animation-timing-function: linear;
+    animation-duration: .25s;
+    animation-fill-mode: forwards;
+}
+
+aside ul li.mouseout
+{
+    animation-direction: reverse;
+}
+
+@keyframes li-hover
+{
+    from
+    {
+        max-height: 2.8em;
+    }
+    to
+    {
+        max-height: 3.9em;
+    }
 }
 
 aside nav ul a:hover li
@@ -238,27 +316,97 @@ aside nav ul a:hover li
     background-color: #ff8e7c;
 }
 
-aside nav ul li img
+aside nav ul a li > div
+{
+    display: none;
+    margin-left: .4em;
+}
+
+aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout
+{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.8em;
+    margin-top: .35em;
+
+    animation-name: li-text-hover;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+aside nav ul a li > div.mouseout
+{
+    /*display: none;*/
+    animation-direction: reverse;
+    animation-duration: .2s;
+}
+
+@keyframes li-text-hover
+{
+    from
+    {
+        opacity: 0;
+        /*display: none;*/
+    }
+    to
+    {
+        opacity: 1;
+        /*display: inline-block;*/
+    }
+}
+
+aside ul li:not(.mouseover)
+{
+    max-width: 4em;
+    text-align: center;
+}
+
+aside img
 {
     display: inline;
     max-width: 65%;
-    margin: 0em;
+    max-height: 2.4em;
+    margin: 0;
 }
 
-aside nav ul a li > span
+aside img.mouseover, aside img.mouseout
 {
-    /*opacity: 0;*/
+    animation-name: li-img-hover;
+    animation-timing-function: linear;
+    animation-duration: .125s;
+    animation-fill-mode: forwards;
+}
+
+aside img.mouseout
+{
+    animation-direction: reverse;
+    animation-fill-mode: none;
+}
+
+@keyframes li-img-hover
+{
+    from
+    {
+        max-height: 2.4em;
+        margin-left: .75em;
+    }
+    to
+    {
+        max-height: 3em;
+        margin-left: .8em;
+    }
 }
 
 /*Footer*/
 
 footer
 {
-    margin-left: 4em;
-    padding-left: 3.05em;
+    padding-left: 7.05em;
     padding-right: 2.3em;
     font-size: 1em;
     background-color: #9F9F9F;
+    position: relative;
+    z-index: 6;
 }
 
 footer ul, footer span

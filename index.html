@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/shared.css">
     <link rel="stylesheet" href="styles/home.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300" rel="stylesheet">
+    <script src="scripts/nav.js"></script>
 </head>
 <body>
 <header>
@@ -18,22 +19,21 @@
         <input type="image" src="images/search_icon_searchbar.png" alt="Suchen">
     </div>
 </header>
-<aside>
+<aside id="nav-parent">
     <nav>
-        <ul>
+        <ul id="nav-list">
             <a href="index.html">
                 <li>
 
                     <img src="images/home_icon.png" alt="Home">
-                    <!--<span>Home</span>-->
-
+                    <div class="nav-text">Home</div>
                 </li>
             </a>
             <a href="index.html">
                 <li>
 
                     <img src="images/news_icon.png" alt="News">
-                    <!--<span>News</span>-->
+                    <div class="nav-text">News</div>
 
                 </li>
             </a>
@@ -41,7 +41,7 @@
                 <li>
 
                     <img src="images/products_icon.png" alt="Produkte">
-                    <!--<span>Produkte</span>-->
+                    <div class="nav-text">Produkte</div>
 
                 </li>
             </a>
@@ -49,14 +49,15 @@
                 <li>
 
                     <img src="images/about_icon.png" alt="About">
-                    <!--<span>About</span>-->
+                    <div class="nav-text">About</div>
 
                 </li>
             </a>
         </ul>
     </nav>
 </aside>
-<div class="header-shadow"></div>
+<div id="header-shadow"></div>
+<div id="darken-body"></div>
 <section>
     <!--Content-->
     <main>
@@ -164,5 +165,6 @@
         <span>&copy;BF-Motion e. U., 2017</span>
     </footer>
 </section>
+<script type="text/javascript" language="JavaScript">init();</script>
 </body>
 </html>
