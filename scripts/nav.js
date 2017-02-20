@@ -4,7 +4,7 @@
  * Libraries used: jQuery, {@link https://github.com/kswedberg/jquery-smooth-scroll jquery.smooth-scroll.js} and {@link http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate/15191130#15191130 a library for animating rotation}
  */
 
-var darkened = false, navBarExtended = false, navBarLocked = false, scrolledToLegalInfos = false;
+var darkened = false, navBarExtended = false, navBarLocked = false, scrolledToLegalInfos = false, hasSeenLegalChangesAnimationOnce = false;
 
 /**
  * Call when the HTML document is ready
@@ -119,7 +119,8 @@ function setScrollToLegalInfos(scrollThere)
                 {
                     $("#legal-infos").css("z-index", "");
                     setDarkenContent(false);
-                }, 1500);
+                    hasSeenLegalChangesAnimationOnce = true;
+                }, hasSeenLegalChangesAnimationOnce ? 1000 : 2500);
             }
         });
 
