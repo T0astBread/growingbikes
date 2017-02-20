@@ -1,8 +1,10 @@
 /**
  * Created by T0astBread on 19.02.2017.
+ *
+ * Libraries used: jQuery, {@link https://github.com/kswedberg/jquery-smooth-scroll jquery.smooth-scroll.js} and {@link http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate/15191130#15191130 a library for animating rotation}
  */
 
-var darkened = false, navBarExtended = false;
+var darkened = false, navBarExtended = false, navBarLocked = false, scrolledToLegalInfos = false, hasSeenLegalChangesAnimationOnce = false;
 
 /**
  * Call when the HTML document is ready
@@ -20,6 +22,11 @@ function init()
     {
         if(navBarExtended) setNavBarExtendedState(false);
     }
+
+    document.getElementById("scroll-link").onclick = function()
+    {
+        setScrollToLegalInfos(!scrolledToLegalInfos);
+    }
 }
 
 /**
@@ -28,16 +35,27 @@ function init()
  */
 function setNavBarExtendedState(extended)
 {
+    if(navBarLocked) return;
+
     navBarExtended = extended;
 
     setMouseOver(extended, document.getElementById("nav-parent"));
-    var children = document.getElementById("nav-list").getElementsByTagName("*");
+    var children = document.getElementById("nav-parent").getElementsByTagName("*");
     for(var i = 0; i < children.length; i++)
     {
         setMouseOver(extended, children[i]);
         if(i > 100) debugger;
     }
     setDarkenContent(extended);
+}
+
+/**
+ * Locks the nav in its current state
+ * @param {boolean} locked
+ */
+function setNavBarLocked(locked)
+{
+    navBarLocked = locked;
 }
 
 /**
@@ -65,11 +83,59 @@ function setMouseOver(mouseover, htmlElement)
     void htmlElement.offsetWidth; //No idea what this line does, I copied it off the internet
     htmlElement.classList.add(mouseover ? "mouseover" : "mouseout");
 
-    if(htmlElement.tagName === "DIV" && htmlElement.id == "")
+    if(htmlElement.classList.contains("appear-on-nav-extension"))
     {
         setTimeout(function()
         {
             htmlElement.style.display = mouseover ? "inline-block" : "none";
         }, 125);
     }
+}
+
+/**
+ *
+ * @param {boolean} scrollThere Whether the page should scroll to the legal infos section or the top
+ */
+function setScrollToLegalInfos(scrollThere)
+{
+    $.smoothScroll(
+        {
+            scrollTarget: $(scrollThere ? "#legal-infos" : "#top"),
+            easing: "swing",
+            speed: 1200,
+            beforeScroll: function()
+            {
+                if(!scrollThere) return;
+                setNavBarLocked(true);
+            },
+            afterScroll: function()
+            {
+                if(!scrollThere) return;
+                setNavBarLocked(false);
+                setNavBarExtendedState(false);
+                $("#legal-infos").css("z-index", "10");
+                setDarkenContent(true, 10);
+                setTimeout(function()
+                {
+                    $("#legal-infos").css("z-index", "");
+                    setDarkenContent(false);
+                    hasSeenLegalChangesAnimationOnce = true;
+                }, hasSeenLegalChangesAnimationOnce ? 1000 : 2500);
+            }
+        });
+
+    $("#scroll-link-text").text(scrollThere ? "Zum Seitenanfang" : "Copyright & Impressum");
+
+    $(".scroll-arrow").each(function(index, element)
+    {
+        // $(element).css("transform", "rotate(" + (scrollThere ? 180 : 0) + "deg)");
+        $(element).animateRotate(getAngle(scrollThere, true), getAngle(scrollThere, false), 300);
+    });
+
+    scrolledToLegalInfos = scrollThere;
+}
+
+function getAngle(scrollThere, isStartAngle)
+{
+    return (isStartAngle ? 0 : 180) + (scrollThere ? 0 : 180);
 }
