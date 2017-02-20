@@ -27,6 +27,7 @@ header, #header-shadow
     font-family: 'PT Sans', sans-serif;
     border-bottom: .5em solid #b23e29;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+    pointer-events: none;
 }
 
 header img
@@ -68,6 +69,7 @@ header #searchbar
     background-color: #b23e29;
     border-radius: .25em;
     box-shadow: 1px 4px 12px rgba(0, 0, 0, .2);
+    pointer-events: auto;
 }
 
 /*TODO: Replace searchbar hover with has focus/child has focus (javascript)*/
@@ -189,6 +191,11 @@ main a:active
     animation-fill-mode: forwards;
 }
 
+#darken-body.mouseover
+{
+    pointer-events: all;
+}
+
 #darken-body.mouseout
 {
     animation-direction: reverse;
@@ -215,7 +222,7 @@ aside
     z-index: 8;
     width: 4em;
     padding: 0em;
-    margin-top: 5em;
+    padding-top: 5em;
     background-color: rgba(220, 220, 220, .8);
     /*background-color: rgba(220, 220, 220, 1);*/
     box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
@@ -255,6 +262,7 @@ aside nav
 {
     /*width: .7em;*/
     width: 100%;
+    height: 100%;
     margin: 0em;
 }
 
@@ -316,13 +324,16 @@ aside nav ul a:hover li
     background-color: #ff8e7c;
 }
 
-aside nav ul a li > div
+/*aside nav ul a li > div*/
+.appear-on-nav-extension
 {
     display: none;
     margin-left: .4em;
 }
 
-aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout
+/*aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout*/
+.appear-on-nav-extension.mouseover, .appear-on-nav-extension.mouseout
+
 {
     display: inline-block;
     vertical-align: top;
@@ -334,7 +345,8 @@ aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout
     animation-fill-mode: forwards;
 }
 
-aside nav ul a li > div.mouseout
+/*aside nav ul a li > div.mouseout*/
+.appear-on-nav-extension.mouseout
 {
     /*display: none;*/
     animation-direction: reverse;
@@ -361,7 +373,7 @@ aside ul li:not(.mouseover)
     text-align: center;
 }
 
-aside img
+aside ul img
 {
     display: inline;
     max-width: 65%;
@@ -369,7 +381,7 @@ aside img
     margin: 0;
 }
 
-aside img.mouseover, aside img.mouseout
+aside ul img.mouseover, aside ul img.mouseout
 {
     animation-name: li-img-hover;
     animation-timing-function: linear;
@@ -377,7 +389,7 @@ aside img.mouseover, aside img.mouseout
     animation-fill-mode: forwards;
 }
 
-aside img.mouseout
+aside ul img.mouseout
 {
     animation-direction: reverse;
     animation-fill-mode: none;
@@ -397,6 +409,42 @@ aside img.mouseout
     }
 }
 
+#scroll-link
+{
+    display: none;
+    width: 100%;
+    height: 2em;
+    position: absolute;
+    bottom: 4.5em;
+    right: .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.15em;
+    line-height: 1.15em;
+    text-align: center;
+    cursor: pointer;
+    opacity: .25;
+}
+
+#scroll-link *
+{
+    display: inline-block;
+}
+
+#scroll-link div
+{
+    margin-top: .15em;
+    vertical-align: top;
+}
+
+.scroll-arrow
+{
+    max-width: 20%;
+    max-height: 75%;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
 /*Footer*/
 
 footer
@@ -407,6 +455,7 @@ footer
     background-color: #9F9F9F;
     position: relative;
     z-index: 6;
+    box-shadow: 0 -2px 8px 0px rgba(0, 0, 0, 0.32);
 }
 
 footer ul, footer span

@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles/shared.css">
     <link rel="stylesheet" href="styles/home.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/nav.js"></script>
+    <script src="scripts/jquery.smooth-scroll.js"></script>
+    <script src="scripts/jquery.animate-rotation.js"></script>
 </head>
 <body>
 <header>
@@ -20,40 +23,40 @@
     </div>
 </header>
 <aside id="nav-parent">
-    <nav>
+    <nav id="nav">
         <ul id="nav-list">
             <a href="index.html">
                 <li>
-
                     <img src="images/home_icon.png" alt="Home">
-                    <div class="nav-text">Home</div>
+                    <div class="appear-on-nav-extension">Home</div>
                 </li>
             </a>
             <a href="index.html">
                 <li>
-
                     <img src="images/news_icon.png" alt="News">
-                    <div class="nav-text">News</div>
-
+                    <div class="appear-on-nav-extension">News</div>
                 </li>
             </a>
             <a href="index.html">
                 <li>
 
                     <img src="images/products_icon.png" alt="Produkte">
-                    <div class="nav-text">Produkte</div>
-
+                    <div class="appear-on-nav-extension">Produkte</div>
                 </li>
             </a>
             <a href="index.html">
                 <li>
 
                     <img src="images/about_icon.png" alt="About">
-                    <div class="nav-text">About</div>
-
+                    <div class="appear-on-nav-extension">About</div>
                 </li>
             </a>
         </ul>
+        <div role="button" class="appear-on-nav-extension" id="scroll-link">
+            <img src="images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <div id="scroll-link-text">Copyright & Impressum</div>
+            <img src="images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+        </div>
     </nav>
 </aside>
 <div id="header-shadow"></div>
@@ -156,7 +159,7 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer id="legal-infos">
         <ul>
             <li><a href="index.html">Copyright</a></li>
             <li><a href="index.html">Impressum</a></li>
