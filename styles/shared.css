@@ -284,13 +284,18 @@ aside nav ul a
 aside nav ul li
 {
     padding: .25em;
-    padding-top: .45em;
-    padding-bottom: .45em;
     margin: 0em;
     /*margin-bottom: 1em;       Replaced by padding in a to enable a consistent selected nav item*/
     text-align: left;
     max-height: 2.8em;
     white-space: nowrap;
+    transition: .1s ease;
+}
+
+aside nav ul a:not(:hover) li
+{
+    padding-top: .45em;
+    padding-bottom: .45em;
 }
 
 aside ul li.mouseover, aside ul li.mouseout
@@ -321,8 +326,31 @@ aside ul li.mouseout
 aside nav ul a:hover li
 {
     /*background-color: #959595;*/
+
+    /*animation-name: single-li-hover;*/
+    /*animation-duration: .1s;*/
+    /*animation-fill-mode: forwards;*/
+
+    padding-top: .9em;
+    padding-bottom: .9em;
     background-color: #ff8e7c;
 }
+
+/*@keyframes single-li-hover*/
+/*{*/
+    /*from*/
+    /*{*/
+        /*padding-top: .45em;*/
+        /*padding-bottom: .45em;*/
+        /*background-color: inherit;*/
+    /*}*/
+    /*to*/
+    /*{*/
+        /*padding-top: .9em;*/
+        /*padding-bottom: 1.2em;*/
+        /*background-color: #ff8e7c;*/
+    /*}*/
+/*}*/
 
 /*aside nav ul a li > div*/
 .appear-on-nav-extension
