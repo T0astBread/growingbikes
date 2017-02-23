@@ -32,8 +32,9 @@ function init()
 /**
  *
  * @param {boolean} extended
+ * @param {boolean} keepDarkBackground
  */
-function setNavBarExtendedState(extended)
+function setNavBarExtendedState(extended, keepDarkBackground)
 {
     if(navBarLocked) return;
 
@@ -46,7 +47,9 @@ function setNavBarExtendedState(extended)
         setMouseOver(extended, children[i]);
         if(i > 100) debugger;
     }
-    setDarkenContent(extended);
+
+    if(keepDarkBackground === undefined) keepDarkBackground = false;
+    if(!keepDarkBackground) setDarkenContent(extended);
 }
 
 /**
@@ -98,41 +101,43 @@ function setMouseOver(mouseover, htmlElement)
  */
 function setScrollToLegalInfos(scrollThere)
 {
-    $.smoothScroll(
-        {
-            scrollTarget: $(scrollThere ? "#legal-infos" : "#top"),
-            easing: "swing",
-            speed: 1200,
-            beforeScroll: function()
-            {
-                if(!scrollThere) return;
-                setNavBarLocked(true);
-            },
-            afterScroll: function()
-            {
-                if(!scrollThere) return;
-                setNavBarLocked(false);
-                setNavBarExtendedState(false);
-                $("#legal-infos").css("z-index", "10");
-                setDarkenContent(true, 10);
-                setTimeout(function()
-                {
-                    $("#legal-infos").css("z-index", "");
-                    setDarkenContent(false);
-                    hasSeenLegalChangesAnimationOnce = true;
-                }, hasSeenLegalChangesAnimationOnce ? 1000 : 2500);
-            }
-        });
-
-    $("#scroll-link-text").text(scrollThere ? "Zum Seitenanfang" : "Copyright & Impressum");
-
-    $(".scroll-arrow").each(function(index, element)
+    if(scrollThere) setTimeout(function() //replaces afterScroll
     {
-        // $(element).css("transform", "rotate(" + (scrollThere ? 180 : 0) + "deg)");
-        $(element).animateRotate(getAngle(scrollThere, true), getAngle(scrollThere, false), 300);
+        console.log("afterscroll");
+        setNavBarLocked(false);
+        setNavBarExtendedState(false, true);
+        $("#legal-infos").css("z-index", "10");
+        setDarkenContent(true, 10);
+        setTimeout(function()
+        {
+            $("#legal-infos").css("z-index", "");
+            setDarkenContent(false);
+            hasSeenLegalChangesAnimationOnce = true;
+        }, hasSeenLegalChangesAnimationOnce ? 750 : 2000);
+    }, 600);
+
+$.smoothScroll(
+    {
+        scrollTarget: $(scrollThere ? "#legal-infos" : "#top"),
+        easing: "swing",
+        speed: 1200,
+        beforeScroll: function()
+        {
+            if(!scrollThere) return;
+            setNavBarLocked(true);
+            console.log("beforescroll");
+        }
     });
 
-    scrolledToLegalInfos = scrollThere;
+$("#scroll-link-text").text(scrollThere ? "Zum Seitenanfang" : "Copyright & Impressum");
+
+$(".scroll-arrow").each(function(index, element)
+{
+    // $(element).css("transform", "rotate(" + (scrollThere ? 180 : 0) + "deg)");
+    $(element).animateRotate(getAngle(scrollThere, true), getAngle(scrollThere, false), 300);
+});
+
+scrolledToLegalInfos = scrollThere;
 }
 
 function getAngle(scrollThere, isStartAngle)
