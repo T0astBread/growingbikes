@@ -5,6 +5,7 @@
     <title>Growing Bikes</title>
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/shared.css">
+    <noscript><link rel="stylesheet" href="styles/shared.noscript.css"></noscript>
     <link rel="stylesheet" href="styles/home.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -53,16 +54,17 @@
             </a>
         </ul>
         <div role="button" class="appear-on-nav-extension" id="scroll-link">
+            <noscript><a href="#legal-infos"></noscript>
             <img src="images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
             <div id="scroll-link-text">Copyright & Impressum</div>
             <img src="images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <noscript></a></noscript>
         </div>
     </nav>
 </aside>
 <div id="header-shadow"></div>
 <div id="darken-body"></div>
-<section>
-    <!--Content-->
+<section id="content">
     <main>
         <section id="whatis">
             <h1>Was macht Growing Bikes?</h1>
@@ -167,6 +169,12 @@
         </ul>
         <span>&copy;BF-Motion e. U., 2017</span>
     </footer>
+    <noscript>
+        <div>
+            <span>Aktivieren Sie JavaScript um das Nutzererlebnis zu verbessern.</span>
+            <a href="index.html">Wie geht das?</a>
+        </div>
+    </noscript>
 </section>
 <script type="text/javascript" language="JavaScript">init();</script>
 </body>

@@ -126,7 +126,7 @@ header input:last-of-type
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
 }
 
-a
+a, footer a, nav a
 {
     color: inherit;
     text-decoration: none;
@@ -155,12 +155,12 @@ main > section > h1
     font-family: "Source Sans Pro";
 }
 
-main a
+main a, noscript a
 {
     color: #4b8bcf;
 }
 
-main a:active
+main a:active, noscript a:active
 {
     color: #7eb9ff;
 }
@@ -224,38 +224,19 @@ aside
     padding: 0em;
     padding-top: 5em;
     background-color: rgba(220, 220, 220, .8);
-    /*background-color: rgba(220, 220, 220, 1);*/
     box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
+
+    background-color: rgba(220, 220, 220, .8);
+    box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
+    width: 4em;
+    transition: .2s;
 }
 
-aside.mouseover, aside.mouseout/*, aside:hover*/
+aside.mouseover, aside:hover
 {
-    animation-name: aside-hover;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
-}
-
-aside.mouseout
-{
-    animation-direction: reverse;
-    /*animation-fill-mode: backwards;*/
-}
-
-@keyframes aside-hover
-{
-    from
-    {
-        background-color: rgba(220, 220, 220, .8);
-        box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.33);
-        width: 4em;
-    }
-    to
-    {
-        background-color: rgba(220, 220, 220, 1);
-        box-shadow: 4px 0px 9px rgba(0, 0, 0, 0.55);
-        /*width: 5.5em;*/
-        width: 20em;
-    }
+    background-color: rgba(220, 220, 220, 1);
+    box-shadow: 4px 0px 9px rgba(0, 0, 0, 0.55);
+    width: 20em;
 }
 
 aside nav
@@ -300,102 +281,42 @@ aside nav ul a:not(:hover) li
 
 aside ul li.mouseover, aside ul li.mouseout
 {
-    animation-name: li-hover;
-    animation-timing-function: linear;
-    animation-duration: .25s;
-    animation-fill-mode: forwards;
+    transition: .25s linear;
+    max-height: 3.9em;
 }
 
 aside ul li.mouseout
 {
-    animation-direction: reverse;
-}
-
-@keyframes li-hover
-{
-    from
-    {
-        max-height: 2.8em;
-    }
-    to
-    {
-        max-height: 3.9em;
-    }
+    /*animation-direction: reverse;*/
+    max-height: 2.8em;
 }
 
 aside nav ul a:hover li
 {
-    /*background-color: #959595;*/
-
-    /*animation-name: single-li-hover;*/
-    /*animation-duration: .1s;*/
-    /*animation-fill-mode: forwards;*/
-
     padding-top: .9em;
     padding-bottom: .9em;
     background-color: #ff8e7c;
 }
 
-/*@keyframes single-li-hover*/
-/*{*/
-    /*from*/
-    /*{*/
-        /*padding-top: .45em;*/
-        /*padding-bottom: .45em;*/
-        /*background-color: inherit;*/
-    /*}*/
-    /*to*/
-    /*{*/
-        /*padding-top: .9em;*/
-        /*padding-bottom: 1.2em;*/
-        /*background-color: #ff8e7c;*/
-    /*}*/
-/*}*/
-
-/*aside nav ul a li > div*/
 .appear-on-nav-extension
 {
     display: none;
     margin-left: .4em;
-}
-
-/*aside nav ul a li > div.mouseover, aside nav ul a li > div.mouseout*/
-.appear-on-nav-extension.mouseover, .appear-on-nav-extension.mouseout
-
-{
-    display: inline-block;
     vertical-align: top;
     font-size: 1.8em;
     margin-top: .35em;
 
-    animation-name: li-text-hover;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
+    opacity: 0;
+    transition: .3s ease;
 }
 
-/*aside nav ul a li > div.mouseout*/
-.appear-on-nav-extension.mouseout
+.appear-on-nav-extension.mouseover, aside:hover .appear-on-nav-extension
 {
-    /*display: none;*/
-    animation-direction: reverse;
-    animation-duration: .2s;
+    opacity: 1;
+    transition: .2s;
 }
 
-@keyframes li-text-hover
-{
-    from
-    {
-        opacity: 0;
-        /*display: none;*/
-    }
-    to
-    {
-        opacity: 1;
-        /*display: inline-block;*/
-    }
-}
-
-aside ul li:not(.mouseover)
+aside:not(:hover) ul li:not(.mouseover)
 {
     max-width: 4em;
     text-align: center;
@@ -439,7 +360,6 @@ aside ul img.mouseout
 
 #scroll-link
 {
-    display: none;
     width: 100%;
     height: 2em;
     position: absolute;
@@ -451,7 +371,12 @@ aside ul img.mouseout
     line-height: 1.15em;
     text-align: center;
     cursor: pointer;
-    opacity: .25;
+    opacity: .7;
+}
+
+aside:not(:hover) #scroll-link
+{
+    display: none;
 }
 
 #scroll-link *

@@ -1,0 +1,51 @@
+.appear-on-nav-extension
+{
+    display: inline-block;
+}
+
+aside ul img
+{
+    margin-left: .65em;
+    max-height: 3em;
+}
+
+aside:hover ul img
+{
+    max-width: 85%;
+}
+
+aside li div.appear-on-nav-extension
+{
+    margin-top: .2em;
+}
+
+noscript > div
+{
+    position: fixed;
+    top: .4em;
+    z-index: 10;
+    width: 40em;
+    left: calc(50% - 20em);
+    padding: .75em;
+    background-color: white;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.6);
+
+    transition: margin-top .2s;
+}
+
+noscript > div span
+{
+    margin-left: .2em;
+}
+
+noscript > div a
+{
+    float: right;
+    margin-right: .4em;
+}
+
+#scroll-link a
+{
+    width: 100%;
+    height: 100%;
+}
