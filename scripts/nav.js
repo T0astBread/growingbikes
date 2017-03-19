@@ -4,83 +4,90 @@
  * Libraries used: jQuery, {@link https://github.com/kswedberg/jquery-smooth-scroll jquery.smooth-scroll.js} and {@link http://stackoverflow.com/questions/15191058/css-rotation-cross-browser-with-jquery-animate/15191130#15191130 a library for animating rotation}
  */
 
-var darkened = false, navBarExtended = false, navBarLocked = false, scrolledToLegalInfos = false, hasSeenLegalChangesAnimationOnce = false;
+let darkened = false, darkeningInProgress = false, darkeningLocked = false, navBarExtended = false,
+    navBarLocked = false, scrolledToLegalInfos = false, hasSeenLegalChangesAnimationOnce = false, isHoveringOverNav;
 
 /**
  * Call when the HTML document is ready
  */
-function init()
+$(document).ready(() =>
 {
-    var toBeHovered = document.getElementById("nav-parent");
+    let toBeHovered = document.getElementById("nav-parent");
 
-    toBeHovered.onmouseenter = function()
+    toBeHovered.onmouseover = () =>
     {
         if(!darkened) setNavBarExtendedState(true);
-    }
+        isHoveringOverNav = true;
+    };
 
-    toBeHovered.onmouseleave = function()
+    toBeHovered.onmouseleave = () =>
     {
         if(navBarExtended) setNavBarExtendedState(false);
-    }
+        isHoveringOverNav = false;
+    };
 
-    document.getElementById("scroll-link").onclick = function()
+    document.getElementById("scroll-link").onclick = () =>
     {
         setScrollToLegalInfos(!scrolledToLegalInfos);
-    }
-}
+    };
+});
 
 /**
  *
  * @param {boolean} extended
  * @param {boolean} keepDarkBackground
  */
-function setNavBarExtendedState(extended, keepDarkBackground)
+var setNavBarExtendedState = (extended, keepDarkBackground) =>
 {
     if(navBarLocked) return;
 
     navBarExtended = extended;
 
-    setMouseOver(extended, document.getElementById("nav-parent"));
-    var children = document.getElementById("nav-parent").getElementsByTagName("*");
-    for(var i = 0; i < children.length; i++)
+    let parent = document.getElementById("nav-parent");
+    setMouseOver(extended, parent);
+    Array.from(parent.getElementsByTagName("*")).forEach(e =>
     {
-        setMouseOver(extended, children[i]);
-        if(i > 100) debugger;
-    }
+        setMouseOver(extended, e);
+        // if(i > 100) debugger;
+    });
+    document.getElementById("header-shadow").style.marginLeft = extended ? "20em" : "4em";
 
-    if(keepDarkBackground === undefined) keepDarkBackground = false;
+    if(keepDarkBackground === undefined) keepDarkBackground = isHoveringOverFooter;
     if(!keepDarkBackground) setDarkenContent(extended);
-}
+};
 
 /**
  * Locks the nav in its current state
  * @param {boolean} locked
  */
-function setNavBarLocked(locked)
+var setNavBarLocked = (locked) =>
 {
     navBarLocked = locked;
-}
+};
 
 /**
  *
  * @param {boolean} darken
  * @param {Integer} zIndex
  */
-function setDarkenContent(darken, zIndex)
+var setDarkenContent = (darken, zIndex) =>
 {
     darkened = darken;
 
-    var darkener = document.getElementById("darken-body");
+    let darkener = document.getElementById("darken-body");
     setMouseOver(darken, darkener);
+    darkeningInProgress = true;
+    setTimeout(() => darkeningInProgress = false, 200);
     darkener.style.zIndex = zIndex > 0 ? zIndex : 7;
-}
+    console.log("darken " + darken);
+};
 
 /**
  *
  * @param {boolean} mouseover
  * @param {HTMLElement} htmlElement
  */
-function setMouseOver(mouseover, htmlElement)
+let setMouseOver = (mouseover, htmlElement) =>
 {
     htmlElement.classList.remove(mouseover ? "mouseout" : "mouseover");
     void htmlElement.offsetWidth; //No idea what this line does, I copied it off the internet
@@ -88,59 +95,58 @@ function setMouseOver(mouseover, htmlElement)
 
     if(htmlElement.classList.contains("appear-on-nav-extension"))
     {
-        setTimeout(function()
+        setTimeout(() =>
         {
             htmlElement.style.display = mouseover ? "inline-block" : "none";
         }, 125);
     }
-}
+};
 
 /**
  *
  * @param {boolean} scrollThere Whether the page should scroll to the legal infos section or the top
  */
-function setScrollToLegalInfos(scrollThere)
+var setScrollToLegalInfos = (scrollThere) =>
 {
-    if(scrollThere) setTimeout(function() //replaces afterScroll
+    if(scrollThere) setTimeout(() => //replaces afterScroll
     {
-        console.log("afterscroll");
         setNavBarLocked(false);
+        if(hasSeenLegalChangesAnimationOnce) return;
         setNavBarExtendedState(false, true);
         $("#legal-infos").css("z-index", "10");
         setDarkenContent(true, 10);
-        setTimeout(function()
+        setTimeout(() =>
         {
             $("#legal-infos").css("z-index", "");
             setDarkenContent(false);
             hasSeenLegalChangesAnimationOnce = true;
-        }, hasSeenLegalChangesAnimationOnce ? 750 : 2000);
+        }, 2000);
     }, 600);
 
-$.smoothScroll(
-    {
-        scrollTarget: $(scrollThere ? "#legal-infos" : "#top"),
-        easing: "swing",
-        speed: 1200,
-        beforeScroll: function()
+    $.smoothScroll(
         {
-            if(!scrollThere) return;
-            setNavBarLocked(true);
-            console.log("beforescroll");
-        }
+            scrollTarget: $(scrollThere ? "#legal-infos" : "#top"),
+            easing: "swing",
+            speed: 1200,
+            beforeScroll: () =>
+            {
+                if(!scrollThere) return;
+                setNavBarLocked(true);
+            }
+        });
+
+    $("#scroll-link-text").text(scrollThere ? "Zum Seitenanfang" : "Copyright & Impressum");
+
+    Array.from($(".scroll-arrow")).forEach((element) =>
+    {
+        // $(element).css("transform", "rotate(" + (scrollThere ? 180 : 0) + "deg)");
+        $(element).animateRotate(getAngle(scrollThere, true), getAngle(scrollThere, false), 300);
     });
 
-$("#scroll-link-text").text(scrollThere ? "Zum Seitenanfang" : "Copyright & Impressum");
+    scrolledToLegalInfos = scrollThere;
+};
 
-$(".scroll-arrow").each(function(index, element)
-{
-    // $(element).css("transform", "rotate(" + (scrollThere ? 180 : 0) + "deg)");
-    $(element).animateRotate(getAngle(scrollThere, true), getAngle(scrollThere, false), 300);
-});
-
-scrolledToLegalInfos = scrollThere;
-}
-
-function getAngle(scrollThere, isStartAngle)
+let getAngle = (scrollThere, isStartAngle) =>
 {
     return (isStartAngle ? 0 : 180) + (scrollThere ? 0 : 180);
-}
+};

@@ -1,0 +1,157 @@
+.news-preview
+{
+    margin-bottom: 2em;
+}
+
+.news-preview > div
+{
+    /*background-color: #c8c8c8;*/
+    /*padding: 1em;*/
+    height: 9.5em;
+    overflow-y: hidden;
+
+    /*Material floating box*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+
+    /*or Twitter-style box*/
+    /*border: 2px solid gray;*/
+    /*border-radius: .2em;*/
+}
+
+.news-preview > div:hover
+{
+    background-color: #e9e9e9;
+}
+
+.news-preview div > div:not(.news-preview-image)
+{
+    display: inline-block;
+    width: 68%;
+    margin: 1em;
+    margin-right: .5em;
+    margin-bottom: 0em;
+}
+
+.news-preview div h2
+{
+    margin: 0em;
+    margin-bottom: .25em;
+    font-weight: 600;
+    color: black;
+}
+
+.news-preview p
+{
+    hyphens: auto;
+}
+
+.news-preview p>a:last-of-type
+{
+    display: block;
+    margin-top: 1em;
+    font-size: .8em;
+}
+
+.news-preview div.news-preview-image
+{
+    display: inline-block;
+    vertical-align: top;
+    /*text-align: right;*/
+    width: 26%;
+    height: 100%;
+    margin: 0em;
+    padding: 0em;
+    float: right;
+
+    background-image: url("../images/news/eurobike.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    /*Material*/
+    box-shadow: inset 7px 0px 15px -7px rgba(0, 0, 0, .8);
+
+    /*Twitter-embedded-style*/
+    /*border-left: 2px solid gray;*/
+}
+
+/*Irrelevant; ersetzt durch background in <div> (siehe oben)*/
+/*.news-short-preview img*/
+/*{*/
+/*display: inline-block;*/
+/*max-width: 100%;*/
+/*max-height: 100%;*/
+/*}*/
+
+
+/*Responsive design*/
+@media screen and (max-width: 1620px)
+{
+    .news-preview >div
+    {
+        height: 11em;
+    }
+}
+
+@media screen and (max-width: 1350px)
+{
+    .news-preview >div
+    {
+        overflow-y: auto;
+    }
+
+    .news-preview div.news-preview-image
+    {
+        display: none;
+        background: none;
+        width: 0%;
+    }
+
+    .news-preview div>div:not(.news-preview-image)
+    {
+        width: auto;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 1280px)
+{
+    .news-preview
+    {
+        margin-left: 7.25em;
+        margin-right: 5em;
+    }
+}
+
+@media screen and (max-width: 920px)
+{
+    .news-preview
+    {
+        margin-left: 5.25em;
+        margin-right: 3em;
+    }
+}
+
+/*Phone screen size (High end windows phone)*/
+/*TODO: Make the nav dissappear and appear somewhere else instead (in frame.css)*/
+@media screen and (max-width: 768px)
+{
+    .news-preview
+    {
+        margin-left: 3.25em;
+        margin-right: 1em;
+    }
+
+    .news-preview > div
+    {
+        height: auto;
+    }
+
+    /*TODO: Find a nicer color for the border and hover background*/
+    .news-preview > div:first-of-type
+    {
+        border: 2px solid darkgray;
+        border-radius: .2em;
+        box-shadow: none;
+    }
+}
