@@ -1,7 +1,12 @@
+*
+{
+    transition: .1s;
+}
+
 body
 {
-    /*padding-top: -2em;*/
     font-family: Roboto, sans-serif;
+    background-color: #f5f5f5;
 }
 
 body, body section, h1
@@ -10,27 +15,51 @@ body, body section, h1
     padding: 0em;
 }
 
+.flex-placeholder
+{
+    display: block;
+    flex: 1;
+}
+
 /*Header*/
 
-header, #header-shadow
+header, header > *
+{
+    width: 100%;
+    transition: .5s height ease;
+}
+
+header
 {
     position: fixed;
-    top: 0%;
+    top: 0;
     z-index: 9;
+    pointer-events: none;
+    background-color: #FF593A;
+}
+
+#pre-actionbar
+{
+    height: 0;
+}
+
+#actionbar
+{
+    /*position: absolute;*/
+    /*bottom: 0;*/
     height: 3.75em;
-    width: 100%;
+    padding: 0;
     padding-top: .5em;
     padding-bottom: .5em;
     margin: 0em;
     display: flex;
-    background-color: #FF593A;
     font-family: 'PT Sans', sans-serif;
     border-bottom: .5em solid #b23e29;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
     pointer-events: none;
 }
 
-header img
+#actionbar img
 {
     max-height: 75%;
     display: inline-block;
@@ -41,10 +70,10 @@ header img
     padding: 0em;
 }
 
-header h1
+#actionbar h1
 {
     display: inline-block;
-    font-size: 2em;
+    font-size: 24pt;
     margin: 0em;
     padding: 0em;
     padding-top: .45em;
@@ -54,12 +83,7 @@ header h1
     color: white;
 }
 
-header #flex-placeholder
-{
-    flex: 1;
-}
-
-header #searchbar
+#actionbar #searchbar
 {
     width: 15%;
     height: 67.5%;
@@ -73,7 +97,7 @@ header #searchbar
 }
 
 /*TODO: Replace searchbar hover with has focus/child has focus (javascript)*/
-header #searchbar:hover
+#actionbar #searchbar:hover
 {
     animation: searchbar-elevation;
     animation-duration: .2s;
@@ -94,7 +118,7 @@ header #searchbar:hover
     }
 }
 
-header input
+#actionbar input
 {
     display: inline-block;
     vertical-align: top;
@@ -103,7 +127,7 @@ header input
     padding: 0em;
 }
 
-header input:first-of-type
+#actionbar input:first-of-type
 {
     width: calc(100% - 2.5em);
     float: left;
@@ -111,19 +135,23 @@ header input:first-of-type
     border: none;
     background-color: transparent;
     color: white;
-    font-size: 1.3em;
+    font-size: 15.5pt;
 }
 
-header input:last-of-type
+#actionbar input:last-of-type
 {
     float: right;
 }
 
+/*TODO: Make header shadow resize when nav resizes (to margin-left: 20em, transition: .2s)*/
 #header-shadow
 {
-    z-index: 7;
+    height: 1px;
+    margin-top: -1px;
+    margin-left: 4em;
     background: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
+    box-shadow: 6px 2px 5px rgba(0, 0, 0, .4);
+    transition: margin-left .2s;
 }
 
 a, footer a, nav a
@@ -136,23 +164,25 @@ a, footer a, nav a
 
 main
 {
-    font-size: 1.7em;
+    font-size: 20pt;
     padding-top: 6em;
     margin-left: 0em;
     margin-right: 0em;
     text-align: justify;
 }
 
-main > section
+main > section, .has-default-margin
 {
     margin-left: 9.5em;
     margin-right: 8em;
     margin-bottom: 5%;
 }
 
-main > section > h1
+main > h1
 {
-    font-family: "Source Sans Pro";
+    margin: 0;
+    margin-left: 2.25em;
+    margin-bottom: .35em;
 }
 
 main a, noscript a
@@ -178,9 +208,9 @@ main a:active, noscript a:active
     width: 100%;
     height: 100%;
     z-index: 7;
-    pointer-events: none;
     background-color: black;
     opacity: 0;
+    pointer-events: none;
 }
 
 #darken-body.mouseover, #darken-body.mouseout
@@ -211,6 +241,56 @@ main a:active, noscript a:active
     {
         opacity: .6;
     }
+}
+
+h1
+{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 86pt;
+    font-weight: bold;
+    color: black;
+}
+
+/*h2*/
+/*{*/
+    /*font-family: "Roboto", sans-serif;*/
+    /*font-weight: 200;*/
+    /*font-size: 26pt;*/
+/*}*/
+
+h2
+{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 26pt;
+    font-weight: bold;
+    color: #4b8bcf;
+    margin-bottom: .2em;
+}
+
+select
+{
+    height: 24pt;
+    display: inline;
+    vertical-align: baseline;
+    font-size: 19pt;
+    line-height: 20pt;
+    width: auto;
+    /*padding-bottom: .1em;*/
+    /*padding-top: .1em;*/
+    border: none;
+    border-bottom: #ff593a solid;
+    background-color: transparent;
+    transition: width .6s;
+}
+
+select:focus
+{
+    outline: none;
+}
+
+select#dynamic-size-select-temp
+{
+    display: none;
 }
 
 /*Nav*/
@@ -303,7 +383,7 @@ aside nav ul a:hover li
     display: none;
     margin-left: .4em;
     vertical-align: top;
-    font-size: 1.8em;
+    font-size: 22pt;
     margin-top: .35em;
 
     opacity: 0;
@@ -367,8 +447,8 @@ aside ul img.mouseout
     right: .5em;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 1.15em;
-    line-height: 1.15em;
+    font-size: 14pt;
+    line-height: 14pt;
     text-align: center;
     cursor: pointer;
     opacity: .7;
@@ -404,7 +484,7 @@ footer
 {
     padding-left: 7.05em;
     padding-right: 2.3em;
-    font-size: 1em;
+    font-size: 12pt;
     background-color: #9F9F9F;
     position: relative;
     z-index: 6;
@@ -415,20 +495,22 @@ footer ul, footer span
 {
     padding: 0em;
     padding-bottom: 1.75em;
-    padding-top: 1em;
+    padding-top: .5em;
     margin: 0em;
     display: inline-block;
 }
 
 footer ul li
 {
-    display: inline;
+    display: inline-block;
     margin-right: 3em;
+    margin-top: .5em;
 }
 
 footer span
 {
     float: right;
+    padding-top: 1em;
 }
 
 /*Responsive design*/
@@ -438,5 +520,20 @@ footer span
     header #searchbar
     {
         width: 25%;
+    }
+}
+
+@media screen and (max-width: 690px)
+{
+    footer ul
+    {
+        padding-bottom: 2em;
+    }
+
+    footer span
+    {
+        display: block;
+        float: none;
+        padding-top: 0;
     }
 }

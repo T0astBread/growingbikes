@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <title>Growing Bikes</title>
     <link rel="shortcut icon" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/shared.css">
-    <noscript><link rel="stylesheet" href="styles/shared.noscript.css"></noscript>
-    <link rel="stylesheet" href="styles/home.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300" rel="stylesheet">
+    <link rel="stylesheet" href="styles/frame.css">
+    <noscript>
+        <link rel="stylesheet" href="styles/frame.noscript.css">
+    </noscript>
+    <link rel="stylesheet" href="styles/whatis.css">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/news.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300,400,600" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="scripts/nav.js"></script>
+    <script src="scripts/footer.js"></script>
     <script src="scripts/external/jquery.smooth-scroll.js"></script>
     <script src="scripts/external/jquery.animate-rotation.js"></script>
 </head>
 <body>
 <header>
-    <img src="images/logo.png" alt="logo">
-    <h1>Growing Bikes</h1>
-    <div id="flex-placeholder"></div>
-    <div id="searchbar">
-        <input type="text" placeholder="Suchen">
-        <input type="image" src="images/search_icon_searchbar.png" alt="Suchen">
+    <div id="pre-actionbar"></div>
+    <div id="actionbar">
+        <img src="images/logo.png" alt="logo">
+        <h1>Growing Bikes</h1>
+        <div class="flex-placeholder"></div>
+        <div id="searchbar">
+            <input type="text" placeholder="Suchen">
+            <input type="image" src="images/search_icon_searchbar.png" alt="Suchen">
+        </div>
     </div>
+    <div id="header-shadow"></div>
 </header>
 <aside id="nav-parent">
     <nav id="nav">
@@ -32,13 +41,13 @@
                     <div class="appear-on-nav-extension">Home</div>
                 </li>
             </a>
-            <a href="index.html">
+            <a href="news">
                 <li>
                     <img src="images/news_icon.png" alt="News">
                     <div class="appear-on-nav-extension">News</div>
                 </li>
             </a>
-            <a href="index.html">
+            <a href="products">
                 <li>
 
                     <img src="images/products_icon.png" alt="Produkte">
@@ -62,91 +71,90 @@
         </div>
     </nav>
 </aside>
-<div id="header-shadow"></div>
 <div id="darken-body"></div>
 <section id="content">
     <main>
-        <section id="whatis">
+        <section class="whatis">
             <h1>Was macht Growing Bikes?</h1>
-            <img src="images/home/swap.png" width="600" alt="Fahrrädertausch">
+            <img src="images/whatis/swap.png" width="600" alt="Fahrrädertausch">
             <p>Lorem ipsum dolor sit amet, consetetur <a href="http://www.bf-motion.at" target="_blank">sadipscing
                 elitr</a>, sed diam nonumy eirmod tempor invidunt ut labore
                 et dolore magna aliquyam erat, sed diam voluptua.</p>
         </section>
-        <section id="products">
-            <h1>Produkte</h1>
+        <section class="products-ribbon">
+            <h2>Produkte</h2>
             <div>
-                <ul id="products-ribbon">
-                    <li>
+                <ul class="products-ribbon-slide">
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/woodbike.PNG">
+                                <img src="images/products/woodbike.PNG">
                             </div>
                             <h1>SCOOL pedeX wood one</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/bluebike.PNG">
+                                <img src="images/products/bluebike.PNG">
                             </div>
                             <h1>SCOOL pedeX 1</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/woodbike.PNG">
+                                <img src="images/products/woodbike.PNG">
                             </div>
                             <h1>SCOOL pedeX wood one</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/notabike.png">
+                                <img src="images/products/notabike.png">
                             </div>
                             <h1>Kein Fahrrad aber viel lorem ipsum dolor sit amet consetetur</h1>
                             <h2>&euro;15529,99</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/woodbike.PNG">
+                                <img src="images/products/woodbike.PNG">
                             </div>
                             <h1>SCOOL pedeX wood one</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/woodbike.PNG">
+                                <img src="images/products/woodbike.PNG">
                             </div>
                             <h1>SCOOL pedeX wood one</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
-                    <li>
+                    <li class="product-tile">
                         <a href="index.html">
                             <div>
-                                <img src="images/home/products/woodbike.PNG">
+                                <img src="images/products/woodbike.PNG">
                             </div>
                             <h1>SCOOL pedeX wood one</h1>
                             <h2>&euro;129,-</h2>
                         </a>
                     </li>
                 </ul>
-                <!--<div id="products-ribbon-fade"></div>-->
+                <!--<div class="products-ribbon-fade"></div>-->
             </div>
         </section>
-        <section id="news">
-            <h1>News</h1>
-            <div>
+        <section>
+            <h2>News</h2>
+            <div class="news-preview">
                 <div>
                     <h2>Eurobike 2016</h2>
                     <p>
@@ -157,7 +165,7 @@
                         lesen</a>
                     </p>
                 </div>
-                <div id="news-image"><!--<img src="images/news/eurobike.PNG" alt="Eurobike 2016">--></div>
+                <div class="news-preview-image"><!--<img src="images/news-short-preview/eurobike.PNG" alt="Eurobike 2016">--></div>
             </div>
         </section>
     </main>
@@ -176,6 +184,5 @@
         </div>
     </noscript>
 </section>
-<script type="text/javascript" language="JavaScript">init();</script>
 </body>
 </html>

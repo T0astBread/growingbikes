@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Growing Bikes</title>
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../styles/frame.css">
+    <noscript>
+        <link rel="stylesheet" href="../styles/frame.noscript.css">
+    </noscript>
+    <link rel="stylesheet" href="../styles/products.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300,400,600" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/select.js"></script>
+    <script src="../scripts/products-showcase.js"></script>
+    <script src="../scripts/external/jquery.smooth-scroll.js"></script>
+    <script src="../scripts/external/jquery.animate-rotation.js"></script>
+</head>
+<body>
+<header>
+    <div id="pre-actionbar"></div>
+    <div id="actionbar">
+        <img src="../images/logo.png" alt="logo">
+        <h1>Growing Bikes</h1>
+        <div class="flex-placeholder"></div>
+        <div id="searchbar">
+            <input type="text" placeholder="Suchen">
+            <input type="image" src="../images/search_icon_searchbar.png" alt="Suchen">
+        </div>
+    </div>
+    <div id="header-shadow"></div>
+</header>
+<aside id="nav-parent">
+    <nav id="nav">
+        <ul id="nav-list">
+            <a href="../">
+                <li>
+                    <img src="../images/home_icon.png" alt="Home">
+                    <div class="appear-on-nav-extension">Home</div>
+                </li>
+            </a>
+            <a href="../news">
+                <li>
+                    <img src="../images/news_icon.png" alt="News">
+                    <div class="appear-on-nav-extension">News</div>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+
+                    <img src="../images/products_icon.png" alt="Produkte">
+                    <div class="appear-on-nav-extension">Produkte</div>
+                </li>
+            </a>
+            <a href="index.html">
+                <li>
+
+                    <img src="../images/about_icon.png" alt="About">
+                    <div class="appear-on-nav-extension">About</div>
+                </li>
+            </a>
+        </ul>
+        <div role="button" class="appear-on-nav-extension" id="scroll-link">
+            <noscript><a href="#legal-infos"></noscript>
+            <img src="../images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <div id="scroll-link-text">Copyright & Impressum</div>
+            <img src="../images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <noscript></a></noscript>
+        </div>
+    </nav>
+</aside>
+<div id="darken-body"></div>
+<section id="content">
+    <main>
+        <select id="dynamic-size-select-temp">
+            <option></option>
+        </select>
+        <h1>Artikel</h1>
+        <section>
+            <h2 class="products-showcase-header">Beliebte Neuerscheinungen</h2>
+            <table class="products-showcase">
+                <tr>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                    <td class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <!--<ul class="products-showcase">-->
+                <!--<li>-->
+                    <!--<ul>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<ul>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                        <!--<li class="product-tile">-->
+                            <!--<a href="index.html">-->
+                                <!--<div>-->
+                                    <!--<img src="../images/products/woodbike.PNG">-->
+                                <!--</div>-->
+                                <!--<h1>SCOOL pedeX wood one</h1>-->
+                                <!--<h2>&euro;129,-</h2>-->
+                            <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </section>
+        <section class="products-ribbon">
+            <h2>Empfohlen für Sie</h2>
+            <div>
+                <ul class="products-ribbon-slide">
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/bluebike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX 1</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/notabike.png">
+                            </div>
+                            <h1>Kein Fahrrad aber viel lorem ipsum dolor sit amet consetetur</h1>
+                            <h2>&euro;15529,99</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                    <li class="product-tile">
+                        <a href="index.html">
+                            <div>
+                                <img src="../images/products/woodbike.PNG">
+                            </div>
+                            <h1>SCOOL pedeX wood one</h1>
+                            <h2>&euro;129,-</h2>
+                        </a>
+                    </li>
+                </ul>
+                <!--<div class="products-ribbon-fade"></div>-->
+            </div>
+        </section>
+        <section>
+            <div class="products-list-header">
+                <h2>Alle Artikel</h2>
+                <span>Sortiert nach
+                        <select class="dynamic-size-select">
+                            <option>Name</option>
+                            <option>Preis</option>
+                            <option>Lorem Ipsum Sortierung</option>
+                        </select>
+                    </span>
+            </div>
+            <ul class="products-list">
+                <li>
+                    <a>
+                        <div class="products-list-image">
+                            <img src="../images/products/bluebike.PNG">
+                        </div>
+                        <div class="products-list-information">
+                            <h2>SCOOL pedeX 1</h2>
+                            <div class="products-list-description">
+                                <p>
+                                    Das SCOOL pedeX 1 ist ein Fahrrad.
+                                </p>
+                                <ul>
+                                    <li>ab 2 Jahre</li>
+                                    <li>in 3 coolen Farben erhältlich</li>
+                                    <li>Rahmen und Felgen aus Aluminium</li>
+                                    <li>Luftbereifung 12 x 2,00</li>
+                                    <li>Sattelhöhe von 31 bis 41 cm einstellbar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="products-list-actions">
+                            <button>
+                                <img src="../images/products-action-basket.png">
+                                <div>In den Warenkorb</div>
+                            </button>
+                            <hr>
+                            <button>
+                                <img src="../images/products-action-details.png">
+                                <div>Details</div>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div class="products-list-image">
+                            <img src="../images/products/notabike.png">
+                        </div>
+                        <div class="products-list-information">
+                            <h2>Kein Fahrrad</h2>
+                            <div class="products-list-description">
+                                <p>
+                                    Das ist kein Fahrrad. Das ist kein Fahrrad. Das ist kein Fahrrad. Das ist kein
+                                    Fahrrad. Das ist kein Fahrrad. Das ist kein Fahrrad. Das ist kein Fahrrad.
+                                </p>
+                                <ul>
+                                    <li>ab 2 Jahre</li>
+                                    <li>in keiner coolen Farbe erhältlich</li>
+                                    <li>Rahmen und Felgen aus Menschenhaut</li>
+                                    <li>Luftbereifung 12 x 2,00</li>
+                                    <li>Sattelhöhe von 31 bis 41 cm einstellbar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="products-list-actions">
+                            <button>
+                                <img src="../images/products-action-basket.png">
+                                <div>In den Warenkorb</div>
+                            </button>
+                            <hr>
+                            <button>
+                                <img src="../images/products-action-details.png">
+                                <div>Details</div>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div class="products-list-image">
+                            <img src="../images/products/bluebike.PNG">
+                        </div>
+                        <div class="products-list-information">
+                            <h2>SCOOL pedeX 1</h2>
+                            <div class="products-list-description">
+                                <p>
+                                    Das SCOOL pedeX 1 ist ein Fahrrad.
+                                </p>
+                                <ul>
+                                    <li>ab 2 Jahre</li>
+                                    <li>in 3 coolen Farben erhältlich</li>
+                                    <li>Rahmen und Felgen aus Aluminium</li>
+                                    <li>Luftbereifung 12 x 2,00</li>
+                                    <li>Sattelhöhe von 31 bis 41 cm einstellbar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="products-list-actions">
+                            <button>
+                                <img src="../images/products-action-basket.png">
+                                <div>In den Warenkorb</div>
+                            </button>
+                            <hr>
+                            <button>
+                                <img src="../images/products-action-details.png">
+                                <div>Details</div>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <div class="products-list-image">
+                            <img src="../images/products/bluebike.PNG">
+                        </div>
+                        <div class="products-list-information">
+                            <h2>SCOOL pedeX 1</h2>
+                            <div class="products-list-description">
+                                <p>
+                                    Das SCOOL pedeX 1 ist ein Fahrrad.
+                                </p>
+                                <ul>
+                                    <li>ab 2 Jahre</li>
+                                    <li>in 3 coolen Farben erhältlich</li>
+                                    <li>Rahmen und Felgen aus Aluminium</li>
+                                    <li>Luftbereifung 12 x 2,00</li>
+                                    <li>Sattelhöhe von 31 bis 41 cm einstellbar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="products-list-actions">
+                            <button>
+                                <img src="../images/products-action-basket.png">
+                                <div>In den Warenkorb</div>
+                            </button>
+                            <hr>
+                            <button>
+                                <img src="../images/products-action-details.png">
+                                <div>Details</div>
+                            </button>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer id="legal-infos">
+        <ul>
+            <li><a href="index.html">Copyright</a></li>
+            <li><a href="index.html">Impressum</a></li>
+            <li><a href="index.html">Kontakt</a></li>
+        </ul>
+        <span>&copy;BF-Motion e. U., 2017</span>
+    </footer>
+    <noscript>
+        <div>
+            <span>Aktivieren Sie JavaScript um das Nutzererlebnis zu verbessern.</span>
+            <a href="index.html">Wie geht das?</a>
+        </div>
+    </noscript>
+</section>
+</body>
+</html>
