@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Growing Bikes</title>
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../styles/frame.css">
+    <noscript>
+        <link rel="stylesheet" href="../styles/frame.noscript.css">
+    </noscript>
+    <link rel="stylesheet" href="../styles/news.css">
+    <link rel="stylesheet" href="../styles/misc.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300,400,600" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/select.js"></script>
+    <script src="../scripts/products-showcase.js"></script>
+    <script src="../scripts/external/jquery.smooth-scroll.js"></script>
+    <script src="../scripts/external/jquery.animate-rotation.js"></script>
+</head>
+<body>
+<header>
+    <div id="pre-actionbar"></div>
+    <div id="actionbar">
+        <img src="../images/logo.png" alt="logo">
+        <h1>Growing Bikes</h1>
+        <div class="flex-placeholder"></div>
+        <div id="searchbar">
+            <input type="text" placeholder="Suchen">
+            <input type="image" src="../images/search_icon_searchbar.png" alt="Suchen">
+        </div>
+    </div>
+    <div id="header-shadow"></div>
+</header>
+<aside id="nav-parent">
+    <nav id="nav">
+        <ul id="nav-list">
+            <a href="../">
+                <li>
+                    <img src="../images/home_icon.png" alt="Home">
+                    <div class="appear-on-nav-extension">Home</div>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <img src="../images/news_icon.png" alt="News">
+                    <div class="appear-on-nav-extension">News</div>
+                </li>
+            </a>
+            <a href="../products">
+                <li>
+
+                    <img src="../images/products_icon.png" alt="Produkte">
+                    <div class="appear-on-nav-extension">Produkte</div>
+                </li>
+            </a>
+            <a href="index.html">
+                <li>
+
+                    <img src="../images/about_icon.png" alt="About">
+                    <div class="appear-on-nav-extension">About</div>
+                </li>
+            </a>
+        </ul>
+        <div role="button" class="appear-on-nav-extension" id="scroll-link">
+            <noscript><a href="#legal-infos"></noscript>
+            <img src="../images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <div id="scroll-link-text">Copyright & Impressum</div>
+            <img src="../images/scroll-arrow.png" alt="Scroll-Pfeil" class="scroll-arrow">
+            <noscript></a></noscript>
+        </div>
+    </nav>
+</aside>
+<div id="darken-body"></div>
+<section id="content">
+    <main>
+        <select id="dynamic-size-select-temp">
+            <option></option>
+        </select>
+        <h1>Neuigkeiten</h1>
+        <section>
+            <h2>Vorgeschlagen</h2>
+            <div class="news-preview">
+                <div>
+                    <h2>Eurobike 2016</h2>
+                    <p>
+                        Die Eurobike - der Treffpunkt für den Fahrradfachhandel und die gesamte Bikerszene. Egal ob groß
+                        oder
+                        klein.
+                        Wir besuchten diese herausragende Messe während der Fachtage...<br><a href="index.html">Mehr
+                        lesen</a>
+                    </p>
+                </div>
+                <div class="news-preview-image"><!--<img src="images/news-short-preview/eurobike.PNG" alt="Eurobike 2016">--></div>
+            </div>
+        </section>
+        <section>
+            <h2>Alle Neuigkeiten</h2>
+            <span>Sortiert nach
+                        <select class="dynamic-size-select">
+                            <option>Datum</option>
+                            <option>Relevanz</option>
+                            <option>Kategorie</option>
+                        </select>
+                    </span>
+            <ul class="news-list-detailed">
+                <li class="news-preview-detailed">
+                    <h2>Saisonstart mit Growing Bikes</h2>
+                    <p>
+                        Rechtzeitig vor Ostern haben die ersten gebrauchten GROWING BIKES der Saison den weg zu ihren neuen Besitzern gefunden.
+                        Die Räder wurden überprüft, gewartet und entsprechend aufbereitet.
+
+                        Wir wünschen den neuen Besitzern viel Freude!
+                    </p>
+                    <div class="image-row-thumbnail news-preview-detailed-image" style="background-image: url('../images/news/saisonstart.PNG')">
+                        <button>
+                            <img src="../images/search_icon_image_zoom.png" alt="Bilder ansehen">
+                            <span>Bilder ansehen</span>
+                        </button>
+                    </div>
+                </li>
+                <li class="news-preview-detailed">
+                    <h2>Erste Flyeraktion bei BF-Motion</h2>
+                    <p>
+                        Vor dem diesjährigen Saisonstart stellen wir unser Unternehmen und damit
+                        unsere Produkte und Dienstleistungen
+                        in der näheren Umgebung unseres Standortes vor.
+                    </p>
+                    <p>
+                        Wir freuen uns auf viele Anfragen, Reaktionen und Gespräche.
+                    </p>
+                    <p>
+                        Aber natürlich freuen wir uns auch, wenn unsere Produkte und Dienstleistungen häufig in Anspruch genommen werden.
+                    </p>
+                    <div class="dual">
+                        <div class="image-row-thumbnail news-preview-detailed-image" style="background-image: url('../images/news/flyer.PNG')">
+                        </div>
+                        <div class="image-row-thumbnail news-preview-detailed-image" style="background-image: url('../images/news/flyer.PNG')">
+                            <button>
+                                <img src="../images/search_icon_image_zoom.png" alt="Bilder ansehen">
+                                <span>Bilder ansehen</span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="news-preview-detailed dual flex top">
+                    <div>
+                        <h2>Kompetenz-Schulung<br>Bosch eBike-Systeme</h2>
+                        <p>
+                            Kürzlich fand eine Fachhändler-Schulung für Bosch eBike-Systeme statt. Wir haben natürlich die Gelegenheit genutzt und daran teilgenommen.
+                        </p>
+                        <p>
+                            Interessante Neuheiten, wie der neue kleine Bordcomputer Purion wurden vorgestellt.
+                        </p>
+                        <p>
+                            Ausgiebig wurde durch die beiden Trainer auf Technik und Diagnose der einzelnen Bosch eBike-Systemkomponenten eingegangen.
+                        </p>
+                        <p>
+                            Auch die rechtlichen Aspekte rund um das eBike wurden behandelt und anschließend angeregt durch die Teilnehmer diskutiert.
+                        </p>
+                        <p>
+                            Herzlichen Dank an die beiden Trainer Jürgen Wöss und Markus Schlezies. Es war eine sehr gelungene Veranstaltung.
+                        </p>
+                    </div>
+                    <div class="flex-placeholder"></div>
+                    <div class="image-row-thumbnail news-preview-detailed-image" style="background-image: url('../images/news/bosch.png')">
+                        <button>
+                            <img src="../images/search_icon_image_zoom.png" alt="Bilder ansehen">
+                            <span>Bilder ansehen</span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer id="legal-infos">
+        <ul>
+            <li><a href="index.html">Copyright</a></li>
+            <li><a href="index.html">Impressum</a></li>
+            <li><a href="index.html">Kontakt</a></li>
+        </ul>
+        <span>&copy;BF-Motion e. U., 2017</span>
+    </footer>
+    <noscript>
+        <div>
+            <span>Aktivieren Sie JavaScript um das Nutzererlebnis zu verbessern.</span>
+            <a href="index.html">Wie geht das?</a>
+        </div>
+    </noscript>
+</section>
+</body>
+</html>

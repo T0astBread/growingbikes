@@ -1,0 +1,67 @@
+/*IMAGE-ROW*/
+.image-row-thumbnail
+{
+    position: relative;
+    margin-bottom: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 15px 0px rgba(0, 0, 0, 0.55);
+}
+
+.image-row-thumbnail button
+{
+    position: absolute;
+    bottom: .2em;
+    right: .8em;
+    background: none;
+    border: none;
+}
+
+.image-row-thumbnail button:focus
+{
+    outline: none;
+}
+
+.image-row-thumbnail button img
+{
+    display: inline;
+    vertical-align: middle;
+    width: 3.25em;
+    height: 3.25em;
+}
+
+.image-row-thumbnail button span
+{
+    color: white;
+    font-size: 16pt;
+    vertical-align: middle;
+    text-shadow: 0 0 4px black;
+}
+
+/*LAYOUT*/
+.dual > *
+{
+    width: 49.5%;
+    display: inline-block;
+}
+
+.dual > *:first-child
+{
+    margin-right: .1em;
+}
+
+.top > *
+{
+    vertical-align: top;
+}
+
+.middle > *
+{
+    vertical-align: middle;
+}
+
+.flex
+{
+    display: flex;
+}

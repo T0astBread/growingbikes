@@ -1,14 +1,7 @@
-.news-preview
+/*SHARED*/
+.news-preview, .news-preview-detailed, .news-list-detailed
 {
-    margin-bottom: 2em;
-}
-
-.news-preview > div
-{
-    /*background-color: #c8c8c8;*/
-    /*padding: 1em;*/
-    height: 9.5em;
-    overflow-y: hidden;
+    background-color: white;
 
     /*Material floating box*/
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
@@ -18,12 +11,35 @@
     /*border-radius: .2em;*/
 }
 
-.news-preview > div:hover
+.news-preview h2, .news-preview-detailed h2
+{
+    margin: 0em;
+    margin-bottom: .25em;
+    font-weight: 600;
+    color: black;
+}
+
+.news-preview p, .news-preview-detailed p
+{
+    hyphens: auto;
+}
+
+/*NEWS-PREVIEW*/
+.news-preview
+{
+    /*background-color: #c8c8c8;*/
+    /*padding: 1em;*/
+    height: 9.5em;
+    overflow-y: hidden;
+    margin-bottom: 2em;
+}
+
+.news-preview:hover
 {
     background-color: #e9e9e9;
 }
 
-.news-preview div > div:not(.news-preview-image)
+.news-preview > div:not(.news-preview-image)
 {
     display: inline-block;
     width: 68%;
@@ -32,20 +48,7 @@
     margin-bottom: 0em;
 }
 
-.news-preview div h2
-{
-    margin: 0em;
-    margin-bottom: .25em;
-    font-weight: 600;
-    color: black;
-}
-
-.news-preview p
-{
-    hyphens: auto;
-}
-
-.news-preview p>a:last-of-type
+.news-preview p > a:last-of-type
 {
     display: block;
     margin-top: 1em;
@@ -83,11 +86,55 @@
 /*max-height: 100%;*/
 /*}*/
 
+/*NEWS-PREVIEW-DETAILED*/
+.news-preview-detailed
+{
+    padding: 2.5em;
+}
+
+.news-preview-detailed.dual > div:first-child
+{
+    width: 46%;
+}
+
+.news-preview-detailed.dual > div:last-child
+{
+    display: inline-flex;
+    align-self: flex-end;
+}
+
+.news-preview-detailed-image
+{
+    height: 30em;
+}
+
+/*NEWS-LIST-DETAILED*/
+.news-list-detailed
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14pt;
+}
+
+.news-list-detailed li
+{
+    margin: 0;
+    margin-top: 1em;
+    padding-bottom: 2em;
+    box-shadow: none;
+}
+
+.news-list-detailed li:not(:last-child)
+{
+    border-bottom: 2px solid #c2c2c2;
+}
+
 
 /*Responsive design*/
 @media screen and (max-width: 1620px)
 {
-    .news-preview >div
+    .news-preview > div
     {
         height: 11em;
     }
@@ -95,7 +142,7 @@
 
 @media screen and (max-width: 1350px)
 {
-    .news-preview >div
+    .news-preview > div
     {
         overflow-y: auto;
     }
@@ -107,7 +154,7 @@
         width: 0%;
     }
 
-    .news-preview div>div:not(.news-preview-image)
+    .news-preview > div:not(.news-preview-image)
     {
         width: auto;
         text-align: left;
@@ -136,20 +183,12 @@
 /*TODO: Make the nav dissappear and appear somewhere else instead (in frame.css)*/
 @media screen and (max-width: 768px)
 {
+    /*TODO: Find a nicer color for the border and hover background*/
     .news-preview
     {
         margin-left: 3.25em;
         margin-right: 1em;
-    }
-
-    .news-preview > div
-    {
         height: auto;
-    }
-
-    /*TODO: Find a nicer color for the border and hover background*/
-    .news-preview > div:first-of-type
-    {
         border: 2px solid darkgray;
         border-radius: .2em;
         box-shadow: none;
