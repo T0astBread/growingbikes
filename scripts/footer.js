@@ -46,8 +46,8 @@ var setHighlightedFooter = (isHighlighted) =>
     hightlighted = isHighlighted;
     // setTimeout(() => $("footer").css("z-index", highlighted ? "10" : "6"), highlighted ? 0 : 200);
     $("footer").css("z-index", hightlighted ? "10" : "6");
-    if(hightlighted) setDarkenContent(true, 10);
-    else setDarkenContent(false);
+    if(hightlighted) setDarkenContent({darken: true, zIndex: 10});
+    else setDarkenContent({darken: false, blockPointerEvents: false});
 };
 
 var setHighlightFootersOnHover = (highlightOnHover) =>

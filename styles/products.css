@@ -327,20 +327,6 @@ ul.products-list
 ///RESPONSIVE DESIGN
 //////////////////*/
 
-@media screen and (max-width: 1000px)
-{
-    .products-ribbon
-    {
-        /*padding-left: 3.25em;*/
-        /*padding-right: 1em;*/
-
-        padding-left: 2.5em;
-        padding-right: 0em;
-    }
-}
-
-/*Responsive design*/
-
 @media screen and (max-width: 1350px)
 {
     .products-ribbon
@@ -350,14 +336,23 @@ ul.products-list
     }
 }
 
-@media screen and (max-width: 1000px)
+/*@media screen and (max-width: 1000px)*/
+/*{*/
+    /*.products-ribbon*/
+    /*{*/
+        /*!*padding-left: 3.25em;*!*/
+        /*!*padding-right: 1em;*!*/
+
+        /*padding-left: 2.5em;*/
+        /*padding-right: 0em;*/
+    /*}*/
+/*}*/
+
+@media screen and (max-width: 980px)
 {
     .products-ribbon
     {
-        /*padding-left: 3.25em;*/
-        /*padding-right: 1em;*/
-
-        padding-left: 2.5em;
-        padding-right: 0em;
+        padding-left: .2em;
+        padding-right: .2em;
     }
 }

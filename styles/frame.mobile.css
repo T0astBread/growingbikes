@@ -1,0 +1,92 @@
+#actionbar-nav nav, #actionbar-nav ul
+{
+    height: 100%;
+}
+
+#actionbar-nav nav a
+{
+    height: 25%;
+    box-sizing: border-box;
+}
+
+#actionbar-nav nav a [class^="icon-"]
+{
+    font-size: 84pt;
+}
+
+@media screen and (max-width: 690px)
+{
+    footer ul
+    {
+        padding-bottom: 2em;
+    }
+
+    footer span
+    {
+        display: block;
+        float: none;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 980px)
+{
+    header > *
+    {
+        pointer-events: all!important;
+    }
+
+    #actionbar-nav
+    {
+        display: block;
+        overflow: hidden;
+        height: 0;
+        background-color: white;
+        transition: none;
+    }
+
+    #actionbar
+    {
+        height: 10vh;
+        user-select: none;
+        touch-action: none;
+        border-bottom-width: 15px;
+    }
+
+    #actionbar h1
+    {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 5vh;
+    }
+
+    #actionbar h1::before
+    {
+        font-size: 9.5vh;
+    }
+
+    #actionbar .flex-placeholder
+    {
+        display: none;
+    }
+
+    #actionbar #searchbar
+    {
+        display: none;
+    }
+
+    aside
+    {
+        display: none;
+    }
+
+    main > section
+    {
+        /*margin-left: 0em;*/
+    }
+
+    #header-shadow
+    {
+        display: none;
+    }
+}

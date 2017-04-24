@@ -38,6 +38,11 @@ header
     background-color: #FF593A;
 }
 
+#actionbar-nav
+{
+    display: none;
+}
+
 #pre-actionbar
 {
     height: 0;
@@ -45,17 +50,16 @@ header
 
 #actionbar
 {
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    height: 3.75em;
+    /*height: 3.75em;*/
+    height: 7.5vh;
     padding: 0;
     padding-top: .5em;
     padding-bottom: .5em;
-    margin: 0em;
+    margin: 0;
     display: flex;
     font-family: 'PT Sans', sans-serif;
     border-bottom: .5em solid #b23e29;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     pointer-events: none;
 }
 
@@ -73,14 +77,23 @@ header
 #actionbar h1
 {
     display: inline-block;
-    font-size: 24pt;
+    /*font-size: 24pt;*/
+    font-size: 4.25vh;
     margin: 0em;
     padding: 0em;
-    padding-top: .45em;
-    vertical-align: top;
+    /*padding-top: .45em;*/
+    vertical-align: middle;
     /*height: 1em;*/
     line-height: 1em;
     color: white;
+}
+
+#actionbar h1:before
+{
+    /*font-size: 42pt;*/
+    font-size: 7vh;
+    vertical-align: sub;
+    margin-right: .5em;
 }
 
 #actionbar #searchbar
@@ -93,7 +106,7 @@ header
     background-color: #b23e29;
     border-radius: .25em;
     box-shadow: 1px 4px 12px rgba(0, 0, 0, .2);
-    pointer-events: auto;
+    pointer-events: all;
 }
 
 /*TODO: Replace searchbar hover with has focus/child has focus (javascript)*/
@@ -211,14 +224,17 @@ main a:active, noscript a:active
     background-color: black;
     opacity: 0;
     pointer-events: none;
+    transition: opacity .2s ease;
 }
 
 #darken-body.mouseover, #darken-body.mouseout
 {
-    animation: darken;
-    animation-timing-function: ease;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
+    /*animation: darken;*/
+    /*animation-timing-function: ease;*/
+    /*animation-duration: .2s;*/
+    /*animation-fill-mode: forwards;*/
+
+    opacity: .6;
 }
 
 #darken-body.mouseover
@@ -319,7 +335,7 @@ aside.mouseover, aside:hover
     width: 20em;
 }
 
-aside nav
+nav
 {
     /*width: .7em;*/
     width: 100%;
@@ -327,7 +343,7 @@ aside nav
     margin: 0em;
 }
 
-aside nav ul
+nav ul
 {
     list-style: none;
     margin: 0em;
@@ -335,14 +351,14 @@ aside nav ul
     margin-top: 1em;
 }
 
-aside nav ul a
+nav ul a
 {
     display: block;
     padding-top: .25em;
     padding-bottom: .25em;
 }
 
-aside nav ul li
+nav ul li
 {
     padding: .25em;
     margin: 0em;
@@ -353,25 +369,30 @@ aside nav ul li
     transition: .1s ease;
 }
 
-aside nav ul a:not(:hover) li
+nav ul a [class^="icon-"]
+{
+    font-size: 28pt;
+}
+
+nav ul a:not(:hover) li
 {
     padding-top: .45em;
     padding-bottom: .45em;
 }
 
-aside ul li.mouseover, aside ul li.mouseout
+ul li.mouseover, ul li.mouseout
 {
     transition: .25s linear;
     max-height: 3.9em;
 }
 
-aside ul li.mouseout
+ul li.mouseout
 {
     /*animation-direction: reverse;*/
     max-height: 2.8em;
 }
 
-aside nav ul a:hover li
+nav ul a:hover li
 {
     padding-top: .9em;
     padding-bottom: .9em;
@@ -520,20 +541,5 @@ footer span
     header #searchbar
     {
         width: 25%;
-    }
-}
-
-@media screen and (max-width: 690px)
-{
-    footer ul
-    {
-        padding-bottom: 2em;
-    }
-
-    footer span
-    {
-        display: block;
-        float: none;
-        padding-top: 0;
     }
 }

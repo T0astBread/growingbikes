@@ -60,3 +60,26 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 980px)
+{
+    .whatis
+    {
+        margin-left: 1em!important;
+        margin-right: 1em!important;
+        margin-bottom: 3em;
+    }
+
+    .whatis img
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .whatis p
+    {
+        font-size: 28pt;
+        width: 90%;
+    }
+}

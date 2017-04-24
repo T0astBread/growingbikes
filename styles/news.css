@@ -163,18 +163,18 @@
 
 @media screen and (max-width: 1280px)
 {
-    .news-preview
+    .news-container
     {
         margin-left: 7.25em;
         margin-right: 5em;
     }
 }
 
-@media screen and (max-width: 920px)
+@media screen and (max-width: 980px)
 {
-    .news-preview
+    .news-container
     {
-        margin-left: 5.25em;
+        margin-left: 3em;
         margin-right: 3em;
     }
 }
@@ -183,11 +183,15 @@
 /*TODO: Make the nav dissappear and appear somewhere else instead (in frame.css)*/
 @media screen and (max-width: 768px)
 {
+    /*.news-container*/
+    /*{*/
+        /*margin-left: 1em;*/
+        /*margin-right: 1em;*/
+    /*}*/
+
     /*TODO: Find a nicer color for the border and hover background*/
     .news-preview
     {
-        margin-left: 3.25em;
-        margin-right: 1em;
         height: auto;
         border: 2px solid darkgray;
         border-radius: .2em;

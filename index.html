@@ -5,14 +5,18 @@
     <title>Growing Bikes</title>
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="stylesheet" href="styles/frame.css">
+    <link rel="stylesheet" href="styles/frame.mobile.css">
     <noscript>
         <link rel="stylesheet" href="styles/frame.noscript.css">
     </noscript>
+    <link rel="stylesheet" href="styles/growingbikes-icons.css">
     <link rel="stylesheet" href="styles/whatis.css">
     <link rel="stylesheet" href="styles/products.css">
     <link rel="stylesheet" href="styles/news.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Source+Sans+Pro:300,400,600" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="scripts/actionbar.js"></script>
     <script src="scripts/nav.js"></script>
     <script src="scripts/footer.js"></script>
     <script src="scripts/external/jquery.smooth-scroll.js"></script>
@@ -20,44 +24,83 @@
 </head>
 <body>
 <header>
+    <div id="actionbar-nav">
+        <nav>
+            <ul class="nav-list">
+                <a href="index.html">
+                    <li>
+                        <!--<img src="images/home_icon.png" alt="Home">-->
+                        <span class="icon-home"></span>
+                        <div class="appear-on-nav-extension">Home</div>
+                    </li>
+                </a>
+                <a href="news">
+                    <li>
+                        <!--<img src="images/news_icon.png" alt="News">-->
+                        <span class="icon-news"></span>
+                        <div class="appear-on-nav-extension">News</div>
+                    </li>
+                </a>
+                <a href="products">
+                    <li>
+                        <!--<img src="images/products_icon.png" alt="Produkte">-->
+                        <span class="icon-shop"></span>
+                        <div class="appear-on-nav-extension">Produkte</div>
+                    </li>
+                </a>
+                <a href="index.html">
+                    <li>
+
+                        <!--<img src="images/about_icon.png" alt="About">-->
+                        <span class="icon-info"></span>
+                        <div class="appear-on-nav-extension">About</div>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+    </div>
     <div id="pre-actionbar"></div>
     <div id="actionbar">
-        <img src="images/logo.png" alt="logo">
-        <h1>Growing Bikes</h1>
+        <!--<img src="images/logo.png" alt="logo">-->
+        <h1 class="icon-bike">Growing Bikes</h1>
         <div class="flex-placeholder"></div>
         <div id="searchbar">
             <input type="text" placeholder="Suchen">
-            <input type="image" src="images/search_icon_searchbar.png" alt="Suchen">
+            <input type="image" src="images/search_white.svg" alt="Suchen">
         </div>
     </div>
     <div id="header-shadow"></div>
 </header>
 <aside id="nav-parent">
-    <nav id="nav">
-        <ul id="nav-list">
+    <nav>
+        <ul class="nav-list">
             <a href="index.html">
                 <li>
-                    <img src="images/home_icon.png" alt="Home">
+                    <!--<img src="images/home_icon.png" alt="Home">-->
+                    <span class="icon-home"></span>
                     <div class="appear-on-nav-extension">Home</div>
                 </li>
             </a>
             <a href="news">
                 <li>
-                    <img src="images/news_icon.png" alt="News">
+                    <!--<img src="images/news_icon.png" alt="News">-->
+                    <span class="icon-news"></span>
                     <div class="appear-on-nav-extension">News</div>
                 </li>
             </a>
             <a href="products">
                 <li>
 
-                    <img src="images/products_icon.png" alt="Produkte">
+                    <!--<img src="images/products_icon.png" alt="Produkte">-->
+                    <span class="icon-shop"></span>
                     <div class="appear-on-nav-extension">Produkte</div>
                 </li>
             </a>
             <a href="index.html">
                 <li>
 
-                    <img src="images/about_icon.png" alt="About">
+                    <!--<img src="images/about_icon.png" alt="About">-->
+                    <span class="icon-info"></span>
                     <div class="appear-on-nav-extension">About</div>
                 </li>
             </a>
@@ -152,7 +195,7 @@
                 <!--<div class="products-ribbon-fade"></div>-->
             </div>
         </section>
-        <section>
+        <section class="news-container">
             <h2>News</h2>
             <div class="news-preview">
                 <div>
@@ -165,7 +208,8 @@
                         lesen</a>
                     </p>
                 </div>
-                <div class="news-preview-image"><!--<img src="images/news-short-preview/eurobike.PNG" alt="Eurobike 2016">--></div>
+                <div class="news-preview-image">
+                    <!--<img src="images/news-short-preview/eurobike.PNG" alt="Eurobike 2016">--></div>
             </div>
         </section>
     </main>

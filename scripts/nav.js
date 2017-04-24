@@ -53,7 +53,7 @@ var setNavBarExtendedState = (extended, keepDarkBackground) =>
     document.getElementById("header-shadow").style.marginLeft = extended ? "20em" : "4em";
 
     if(keepDarkBackground === undefined) keepDarkBackground = isHoveringOverFooter;
-    if(!keepDarkBackground) setDarkenContent(extended);
+    if(!keepDarkBackground) setDarkenContent({darken: extended});
 };
 
 /**
@@ -68,18 +68,23 @@ var setNavBarLocked = (locked) =>
 /**
  *
  * @param {boolean} darken
- * @param {Integer} zIndex
+ * @param {int} zIndex
+ * @param {boolean} blockPointerEvents
+ * @param {float} opacity
  */
-var setDarkenContent = (darken, zIndex) =>
+var setDarkenContent = (config) =>
 {
-    darkened = darken;
+    darkened = config.darken;
+    if(!darkened) config.blockPointerEvents = false;
 
     let darkener = document.getElementById("darken-body");
-    setMouseOver(darken, darkener);
+    darkener.style.pointerEvents = config.blockPointerEvents ? "auto" : "none" || "auto";
+    darkener.style.opacity = darkened ? config.opacity || .6 : 0;
+    // setMouseOver(config.darken, darkener);
     darkeningInProgress = true;
     setTimeout(() => darkeningInProgress = false, 200);
-    darkener.style.zIndex = zIndex > 0 ? zIndex : 7;
-    console.log("darken " + darken);
+    darkener.style.zIndex = config.zIndex > 0 ? config.zIndex : 7 || 7;
+    console.log("darken " + darkened);
 };
 
 /**
@@ -114,11 +119,11 @@ var setScrollToLegalInfos = (scrollThere) =>
         if(hasSeenLegalChangesAnimationOnce) return;
         setNavBarExtendedState(false, true);
         $("#legal-infos").css("z-index", "10");
-        setDarkenContent(true, 10);
+        setDarkenContent({darken: true, zIndex: 10});
         setTimeout(() =>
         {
             $("#legal-infos").css("z-index", "");
-            setDarkenContent(false);
+            setDarkenContent({darken: false});
             hasSeenLegalChangesAnimationOnce = true;
         }, 2000);
     }, 600);
