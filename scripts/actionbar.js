@@ -2,7 +2,7 @@
  * Created by T0astBread on 23.04.2017.
  */
 
-let isDragging = false, heightStart, prevDistance;
+let isDragging = collapseOnRelease = expandOnRelease = false, heightStart, prevDistance;
 
 let getPageY = (evt) =>
 {
@@ -17,29 +17,42 @@ let getHeight = () =>
     return parseInt($("#actionbar-nav").height());
 };
 
-let collapse = (duration = 300) =>
+let animateExpandedState = (duration = 300, targetExpandedHeight = 0) =>
 {
     // $("#actionbar-nav").animate({height: "0"}, duration, "swing");
-    animateHeight(0, duration);
+    animateHeight(targetExpandedHeight, duration);
     isDragging = false;
 };
 
 let setHeight = (height) =>
 {
     $("#actionbar-nav").height(height);
-    updateDarkenness();
+    slideUpdate();
 };
+
+let slideUpdate = () =>
+{
+    updateNavOpacity();
+    updateDarkenness();
+}
+
+let updateNavOpacity = () => $("#actionbar-nav > *").css("opacity", getActionBarSlideProgress());
 
 let updateDarkenness = () =>
 {
     if(getHeight() < 10) setDarkenContent({darken: false});
-    else setDarkenContent({darken: true, blockPointerEvents: true, opacity: 1.0 * getHeight() / window.innerHeight});
+    else setDarkenContent({darken: true, blockPointerEvents: true, opacity: getActionBarHeightProgress()});
 };
+
+var getActionBarHeightProgress = () => 1.0 * getHeight() / window.innerHeight;
+var getActionBarSlideProgress = () => 1.0 * getHeight() / (getMaxHeight());
+
+let getMaxHeight = () => window.innerHeight * .8;
 
 let animateHeight = (height, duration) =>
 {
     $("#actionbar-nav").animate({height: "" + height}, duration, "swing");
-    $({i: 0}).animate({i: 100}, {duration: duration, step: updateDarkenness});
+    $({i: 0}).animate({i: 100}, {duration: duration, step: slideUpdate});
 };
 
 let inactive = () =>
@@ -65,14 +78,14 @@ $(document).ready(() =>
         if(isDragging)
         {
             let distance = getPageY(evt) - heightStart, deltaDist = distance - prevDistance;
-            if(getHeight() <= window.innerHeight * .8 || (deltaDist < 0 && distance < getHeight()))
+            if(getHeight() <= getMaxHeight() || (deltaDist < 0 && distance < getHeight()))
             {
                 setHeight(distance);
             }
-            if(isDragging && deltaDist < -15)
-            {
-                collapse(1000);
-            }
+
+            collapseOnRelease = isDragging && deltaDist < -1;
+            expandOnRelease = isDragging && deltaDist > 1;
+
             prevDistance = distance;
             evt.preventDefault();
         }
@@ -82,7 +95,19 @@ $(document).ready(() =>
 
         isDragging = false;
         // $("header").css("transition", oldTransition);
-        if(getHeight() <= 200) collapse();
         prevDistance = 0;
+
+        // animateExpandedState(1000, getHeight() < getMaxHeight() * .4 ? 0 : getMaxHeight());
+
+        if(getHeight() <= 200)
+        {
+            animateExpandedState();
+            return;
+        }
+
+        if(collapseOnRelease) animateExpandedState(1000);
+        else if(expandOnRelease) animateExpandedState(1000, getMaxHeight());
+        else animateExpandedState(1000, getHeight() < getMaxHeight() * .4 ? 0 : getMaxHeight());
+        console.log(collapseOnRelease, expandOnRelease);
     });
 });

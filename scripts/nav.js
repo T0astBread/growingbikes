@@ -84,7 +84,7 @@ var setDarkenContent = (config) =>
     darkeningInProgress = true;
     setTimeout(() => darkeningInProgress = false, 200);
     darkener.style.zIndex = config.zIndex > 0 ? config.zIndex : 7 || 7;
-    console.log("darken " + darkened);
+    // console.log("darken " + darkened);
 };
 
 /**

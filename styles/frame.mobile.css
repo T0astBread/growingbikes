@@ -3,13 +3,18 @@
     height: 100%;
 }
 
-#actionbar-nav nav a
+#actionbar-nav nav li
 {
     height: 25%;
     box-sizing: border-box;
 }
 
-#actionbar-nav nav a [class^="icon-"]
+#actionbar-nav nav a
+{
+    display: inline-block;
+}
+
+#actionbar-nav nav a[class^="icon-"]
 {
     font-size: 84pt;
 }
@@ -43,6 +48,11 @@
         height: 0;
         background-color: white;
         transition: none;
+    }
+
+    #actionbar-nav li
+    {
+        max-height: none;
     }
 
     #actionbar

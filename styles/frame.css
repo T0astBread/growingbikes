@@ -374,7 +374,7 @@ nav ul a [class^="icon-"]
     font-size: 28pt;
 }
 
-nav ul a:not(:hover) li
+nav ul li:not(:hover)
 {
     padding-top: .45em;
     padding-bottom: .45em;
@@ -392,7 +392,7 @@ ul li.mouseout
     max-height: 2.8em;
 }
 
-nav ul a:hover li
+nav ul li:hover
 {
     padding-top: .9em;
     padding-bottom: .9em;
