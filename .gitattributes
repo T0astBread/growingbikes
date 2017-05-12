@@ -18,3 +18,4 @@
 
 #Linguist excluded directories
 scripts/external/* linguist-vendored
+scritps/*.js linguist-vendored

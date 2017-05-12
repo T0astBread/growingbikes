@@ -1,10 +1,10 @@
-"use strict";
 /**
  * Created by StackOverflow users {@link http://stackoverflow.com/users/1250044/yckart yckart} and {@link http://stackoverflow.com/users/2569968/drabname drabname}
  *
  * {@link http://stackoverflow.com/a/15191130}
  * {@link http://stackoverflow.com/a/17579246}
  */
+
 // $.fn.animateRotate = function(angle, duration, easing, complete) {
 //     var args = $.speed(duration, easing, complete);
 //     var step = args.step;
@@ -18,13 +18,18 @@
 //         $({deg: 0}).animate({deg: angle}, args);
 //     });-
 // };
-$.fn.animateRotate = function (startAngle, endAngle, duration, easing, complete) {
-    return this.each(function () {
+
+$.fn.animateRotate = function(startAngle, endAngle, duration, easing, complete)
+{
+    return this.each(function()
+    {
         var elem = $(this);
-        $({ deg: startAngle }).animate({ deg: endAngle }, {
+
+        $({deg: startAngle}).animate({deg: endAngle}, {
             duration: duration,
             easing: easing,
-            step: function (now) {
+            step: function(now)
+            {
                 elem.css({
                     '-moz-transform': 'rotate(' + now + 'deg)',
                     '-webkit-transform': 'rotate(' + now + 'deg)',
