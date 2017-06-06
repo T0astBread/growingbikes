@@ -5,15 +5,13 @@
 
 $(document).ready(() =>
 {
-    $(window).resize(evt =>
-    {
-        let rows = $(".products-showcase tr");
-        rows.each((i, r) =>
-        {
-            // console.log($(r).outerWidth(), r.scrollWidth);
-            // if($(r).outerWidth() < r.scrollWidth) console.log("out of bounds");
-        });
-    });
-
-    $(".products-showcase").each((i, e) => e.addEventListener("overflow", (evt) => console.log("overflow")));
+    // $(window).resize(evt =>
+    // {
+    //     $(".products-showcase tr").each((i, r) =>
+    //     {
+    //         // $(r).find(".product-tile").width(r.clientWidth/4 * .8);
+    //     });
+    // });
+    //
+    // $(".products-showcase").each((i, e) => e.addEventListener("overflow", (evt) => console.log("overflow")));
 });

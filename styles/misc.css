@@ -65,3 +65,14 @@
 {
     display: flex;
 }
+
+.space-divider
+{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.space-divider.quarter-space-divider
+{
+    width: 25%;
+}
