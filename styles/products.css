@@ -8,6 +8,8 @@
     margin: 0em;
     white-space: normal;
     overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
 
     background-color: white;
     box-shadow: 0px 0px 19px rgba(0, 0, 0, .4);
@@ -154,14 +156,26 @@ ul.products-ribbon-slide
 {
     height: 10em;
     padding-bottom: .35em;
-    margin: 0em;
-    margin-left: 0em;
-    margin-right: 0em;
+    margin: 0;
     text-align: center;
     overflow: auto;
     overflow-y: hidden;
     -ms-overflow-y: hidden;
     white-space: nowrap;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+ul.products-ribbon-slide:active, ul.products-ribbon-slide:active .product-tile *
+{
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
 }
 
 /*TODO: Complete fade out of products when at edge of ul*/
